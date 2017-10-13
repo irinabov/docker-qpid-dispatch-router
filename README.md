@@ -1,10 +1,6 @@
 # docker-qpid-dispatch
 
-Docker image for Apache Qpid Dispatch router. 
-The image is based on Fedora 26.
-Apache Proton version is 0.17.0 and Apache Dispatch version is 0.8.0.
-The router is started with a config file ${QPID_CONFIG_DIR}/${QPID_CONFIG_FILE} 
-(defaults to /etc/qpid-dispatch/qdrouterd.conf).
+Docker image for Apache Qpid Dispatch router based on fedora:latest image. 
 Customize container execution using your own version of a config file.
 
 ## Building images
