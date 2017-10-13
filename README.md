@@ -22,9 +22,14 @@ Build arguments:
 
 Examples:
 
-   docker build -t irinabov/docker-qpid-dispatch-router . | tee build.log
-   docker build --build-arg version=devel -t irinabov/docker-qpid-dispatch-router:devel . | tee build.log
-   docker build --build-arg proton=0.17.0 --build-arg dispatch=0.8.0 -t irinabov/docker-qpid-dispatch-router . | tee build.log
+Build the image using latest released versions of proton and dispatch (defined by Dockerfile):
+  docker build -t irinabov/docker-qpid-dispatch-router . | tee build.log
+
+Build the image using snapshot of upstream code:
+  docker build --build-arg version=devel -t irinabov/docker-qpid-dispatch-router:devel . | tee build.log
+  
+Build the image using latest released versions of proton and dispatch (defined by build arguments):
+ docker build --build-arg proton=0.17.0 --build-arg dispatch=0.8.0 -t irinabov/docker-qpid-dispatch-router . | tee build.log
 
 ## Using the image
 
