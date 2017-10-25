@@ -1,4 +1,4 @@
-Sending build context to Docker daemon 8.192 kB
+Sending build context to Docker daemon 347.1 kB
 Step 1 : FROM fedora:latest
  ---> ac96429054d6
 Step 2 : ARG version
@@ -10,24 +10,24 @@ Step 3 : ARG proton
 Step 4 : ARG dispatch
  ---> Using cache
  ---> 55b48b6558fc
-Step 5 : ENV VERSION ${version:-latest} NAME docker-qpid-dispatch-router QPID_PROTON_VERSION ${proton:-0.17.0} QPID_DISPATCH_VERSION ${dispatch:-0.8.0}
+Step 5 : ENV VERSION ${version:-latest} NAME docker-qpid-dispatch-router QPID_PROTON_VERSION ${proton:-0.18.0} QPID_DISPATCH_VERSION ${dispatch:-0.8.0}
  ---> Using cache
- ---> 95e024832e9d
+ ---> df768662e737
 Step 6 : LABEL maintainer "Irina Boverman <irina.boverman@gmail.com>" summary "Docker image for Qpid Dispatch router." name "irinabov/$NAME" version "$VERSION" version-usage "version has 2 values: latest (released proton $QPID_PROTON_VERSION and dispatch $QPID_DISPATCH_VERSION) or devel (under development)" usage1 "docker run -d -p 5672:5672 irinabov/docker-qpid-dispatch-router" usage2 "docker run -p 5672:5672 irinabov/docker-qpid-dispatch-router --help" usage3 "Customize container execution using your own version of a config file"
  ---> Using cache
- ---> 34f736c55445
+ ---> 27ed3b2fc091
 Step 7 : COPY ./build.sh /
- ---> 02415aa1753e
-Removing intermediate container 238b5b4d9b52
+ ---> Using cache
+ ---> 9bed62c7f11e
 Step 8 : RUN ./build.sh
- ---> Running in d674a3331c45
-VERSION is devel...
+ ---> Running in 8779ca203ea2
 [91m+ '[' devel = latest ']'
 + '[' devel = devel ']'
 + echo 'VERSION is devel...'
 + home=/
-+ dnf update -y
-[0mLast metadata expiration check: 0:00:08 ago on Fri Oct 13 14:13:04 2017.
+[0m[91m+ dnf update -y
+[0mVERSION is devel...
+Last metadata expiration check: 0:00:08 ago on Wed Oct 25 14:25:14 2017.
 Dependencies resolved.
 ================================================================================
  Package                       Arch      Version               Repository  Size
@@ -38,12 +38,12 @@ Upgrading:
  ca-certificates               noarch    2017.2.16-1.0.fc26    updates    452 k
  coreutils                     x86_64    8.27-6.fc26           updates    1.1 M
  coreutils-common              x86_64    8.27-6.fc26           updates    1.9 M
- curl                          x86_64    7.53.1-10.fc26        updates    317 k
+ curl                          x86_64    7.53.1-11.fc26        updates    317 k
  dbus                          x86_64    1:1.11.18-1.fc26      updates    257 k
  dbus-libs                     x86_64    1:1.11.18-1.fc26      updates    175 k
- dnf                           noarch    2.7.3-1.fc26          updates    340 k
- dnf-conf                      noarch    2.7.3-1.fc26          updates     67 k
- dnf-yum                       noarch    2.7.3-1.fc26          updates     48 k
+ dnf                           noarch    2.7.5-1.fc26          updates    349 k
+ dnf-conf                      noarch    2.7.5-1.fc26          updates     68 k
+ dnf-yum                       noarch    2.7.5-1.fc26          updates     49 k
  emacs-filesystem              noarch    1:25.3-3.fc26         updates     67 k
  expat                         x86_64    2.2.4-1.fc26          updates    101 k
  file-libs                     x86_64    5.30-11.fc26          updates    504 k
@@ -51,14 +51,14 @@ Upgrading:
  glibc                         x86_64    2.25-10.fc26          updates    3.4 M
  glibc-common                  x86_64    2.25-10.fc26          updates    889 k
  glibc-langpack-en             x86_64    2.25-10.fc26          updates    291 k
- gnupg2                        x86_64    2.2.0-1.fc26          updates    2.2 M
- gnupg2-smime                  x86_64    2.2.0-1.fc26          updates    273 k
+ gnupg2                        x86_64    2.2.1-1.fc26          updates    2.2 M
+ gnupg2-smime                  x86_64    2.2.1-1.fc26          updates    273 k
  gnutls                        x86_64    3.5.15-1.fc26         updates    756 k
  grep                          x86_64    3.1-1.fc26            updates    268 k
  krb5-libs                     x86_64    1.15.1-28.fc26        updates    748 k
  libblkid                      x86_64    2.30.2-1.fc26         updates    194 k
  libcrypt-nss                  x86_64    2.25-10.fc26          updates     53 k
- libcurl                       x86_64    7.53.1-10.fc26        updates    272 k
+ libcurl                       x86_64    7.53.1-11.fc26        updates    272 k
  libdb                         x86_64    5.3.28-24.fc26        updates    751 k
  libdb-utils                   x86_64    5.3.28-24.fc26        updates    138 k
  libdnf                        x86_64    0.11.0-1.fc26         updates    127 k
@@ -76,25 +76,25 @@ Upgrading:
  libsmartcols                  x86_64    2.30.2-1.fc26         updates    158 k
  libsolv                       x86_64    0.6.29-2.fc26         updates    361 k
  libssh2                       x86_64    1.8.0-5.fc26          updates     94 k
- libsss_idmap                  x86_64    1.15.3-4.fc26         updates     85 k
- libsss_nss_idmap              x86_64    1.15.3-4.fc26         updates     82 k
+ libsss_idmap                  x86_64    1.15.3-5.fc26         updates     85 k
+ libsss_nss_idmap              x86_64    1.15.3-5.fc26         updates     83 k
  libuuid                       x86_64    2.30.2-1.fc26         updates     81 k
  lz4-libs                      x86_64    1.8.0-1.fc26          updates     48 k
- nspr                          x86_64    4.16.0-1.fc26         updates    137 k
- nss                           x86_64    3.32.1-1.0.fc26       updates    854 k
- nss-softokn                   x86_64    3.32.0-1.2.fc26       updates    386 k
- nss-softokn-freebl            x86_64    3.32.0-1.2.fc26       updates    223 k
- nss-sysinit                   x86_64    3.32.1-1.0.fc26       updates     62 k
- nss-tools                     x86_64    3.32.1-1.0.fc26       updates    503 k
- nss-util                      x86_64    3.32.0-1.0.fc26       updates     87 k
+ nspr                          x86_64    4.17.0-1.fc26         updates    137 k
+ nss                           x86_64    3.33.0-1.0.fc26       updates    855 k
+ nss-softokn                   x86_64    3.33.0-1.1.fc26       updates    388 k
+ nss-softokn-freebl            x86_64    3.33.0-1.1.fc26       updates    233 k
+ nss-sysinit                   x86_64    3.33.0-1.0.fc26       updates     62 k
+ nss-tools                     x86_64    3.33.0-1.0.fc26       updates    504 k
+ nss-util                      x86_64    3.33.0-1.0.fc26       updates     87 k
  openldap                      x86_64    2.4.45-1.fc26         updates    353 k
  openssl-libs                  x86_64    1:1.1.0f-7.fc26       updates    1.3 M
- p11-kit                       x86_64    0.23.8-1.fc26         updates    261 k
- p11-kit-trust                 x86_64    0.23.8-1.fc26         updates    132 k
+ p11-kit                       x86_64    0.23.9-2.fc26         updates    261 k
+ p11-kit-trust                 x86_64    0.23.9-2.fc26         updates    132 k
  pcre                          x86_64    8.41-1.fc26           updates    203 k
  publicsuffix-list-dafsa       noarch    20170828-1.fc26       updates     45 k
  python3                       x86_64    3.6.2-8.fc26          updates     64 k
- python3-dnf                   noarch    2.7.3-1.fc26          updates    455 k
+ python3-dnf                   noarch    2.7.5-1.fc26          updates    456 k
  python3-hawkey                x86_64    0.11.0-1.fc26         updates     53 k
  python3-librepo               x86_64    1.8.0-1.fc26          updates     45 k
  python3-libs                  x86_64    3.6.2-8.fc26          updates    1.4 M
@@ -107,12 +107,12 @@ Upgrading:
  rpm-plugin-selinux            x86_64    4.13.0.1-7.fc26       updates     58 k
  rpm-plugin-systemd-inhibit    x86_64    4.13.0.1-7.fc26       updates     58 k
  sqlite-libs                   x86_64    3.20.1-1.fc26         updates    535 k
- sssd-client                   x86_64    1.15.3-4.fc26         updates    135 k
+ sssd-client                   x86_64    1.15.3-5.fc26         updates    135 k
  system-python                 x86_64    3.6.2-8.fc26          updates     56 k
  system-python-libs            x86_64    3.6.2-8.fc26          updates    6.3 M
  tar                           x86_64    2:1.29-5.fc26         updates    813 k
  util-linux                    x86_64    2.30.2-1.fc26         updates    2.4 M
- vim-minimal                   x86_64    2:8.0.1176-1.fc26     updates    530 k
+ vim-minimal                   x86_64    2:8.0.1187-1.fc26     updates    530 k
  xkeyboard-config              noarch    2.21-3.fc26           updates    799 k
 
 Transaction Summary
@@ -123,50 +123,54 @@ Total download size: 41 M
 Downloading Packages:
 [91m/usr/share/man/man5/libaudit.conf.5.gz: No such file or directory
 cannot reconstruct rpm from disk files
-[0m[91m/usr/share/locale/ar/LC_MESSAGES/dnf.mo: No such file or directory
+[0m[91m/usr/share/doc/curl/BUGS: No such file or directory
 cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/file-libs/ChangeLog: No such file or directory
+[0m[91m/usr/share/locale/ar/LC_MESSAGES/dnf.mo: No such file or directory
 cannot reconstruct rpm from disk files
 [0m[91m/usr/share/doc/libdnf/AUTHORS: No such file or directory
 cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/file-libs/ChangeLog: No such file or directory
+cannot reconstruct rpm from disk files
 [0m[91m/usr/share/locale/it/LC_MESSAGES/gawk.mo: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/gnutls/NEWS: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/krb5-libs/NOTICE: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/libblkid/COPYING: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/locale/ca/LC_MESSAGES/util-linux.mo: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/man/man1/idn2.1.gz: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/libsolv/README: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/libssh2/AUTHORS: No such file or directory
 cannot reconstruct rpm from disk files
 [0m[91m/usr/share/doc/glibc/INSTALL: No such file or directory
 cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/nss-tools/pp.1: No such file or directory
+[0m[91m/usr/share/doc/krb5-libs/NOTICE: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/gnutls/NEWS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/glibc-common/README.timezone: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libblkid/COPYING: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/man/man1/idn2.1.gz: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libssh2/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libsolv/README: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/locale/ca/LC_MESSAGES/util-linux.mo: No such file or directory
 cannot reconstruct rpm from disk files
 [0m[91m/usr/share/man/man5/cert8.db.5.gz: No such file or directory
 cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/sqlite-libs/README.md: No such file or directory
+[0m[91m/usr/share/doc/p11-kit/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/nss-tools/pp.1: No such file or directory
 cannot reconstruct rpm from disk files
 [0m[91m/usr/share/man/ca/man8/pam_sss.8.gz: No such file or directory
 cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/sqlite-libs/README.md: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/python3-libs/README.rst: No such file or directory
+cannot reconstruct rpm from disk files
 [0m[91m/usr/share/doc/xkeyboard-config/AUTHORS: No such file or directory
-cannot reconstruct rpm from disk files
-/usr/share/doc/python3-libs/README.rst: No such file or directory
-cannot reconstruct rpm from disk files
-[0m[91m/usr/share/doc/glibc-common/README.timezone: No such file or directory
 cannot reconstruct rpm from disk files
 [0m[91m/usr/lib64/python3.6/email/architecture.rst: No such file or directory
 cannot reconstruct rpm from disk files
 [0mSome packages were not downloaded. Retrying.
 --------------------------------------------------------------------------------
-Total                                           952 kB/s |  47 MB     00:50     
-Failed Delta RPMs increased 40.6 MB of updates to 46.8 MB (-15.1% wasted)
+Total                                           774 kB/s |  46 MB     01:01     
+Failed Delta RPMs increased 40.6 MB of updates to 46.5 MB (-14.1% wasted)
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -187,10 +191,10 @@ Running transaction
   Running scriptlet: libsepol-2.6-2.fc26.x86_64                           6/162 
   Upgrading        : libselinux-2.6-7.fc26.x86_64                         7/162 
   Running scriptlet: libselinux-2.6-7.fc26.x86_64                         7/162 
-  Upgrading        : nspr-4.16.0-1.fc26.x86_64                            8/162 
-  Running scriptlet: nspr-4.16.0-1.fc26.x86_64                            8/162 
-  Upgrading        : nss-util-3.32.0-1.0.fc26.x86_64                      9/162 
-  Running scriptlet: nss-util-3.32.0-1.0.fc26.x86_64                      9/162 
+  Upgrading        : nspr-4.17.0-1.fc26.x86_64                            8/162 
+  Running scriptlet: nspr-4.17.0-1.fc26.x86_64                            8/162 
+  Upgrading        : nss-util-3.33.0-1.0.fc26.x86_64                      9/162 
+  Running scriptlet: nss-util-3.33.0-1.0.fc26.x86_64                      9/162 
   Upgrading        : libdb-5.3.28-24.fc26.x86_64                         10/162 
   Running scriptlet: libdb-5.3.28-24.fc26.x86_64                         10/162 
   Upgrading        : expat-2.2.4-1.fc26.x86_64                           11/162 
@@ -203,17 +207,17 @@ Running transaction
   Running scriptlet: libidn2-2.0.4-1.fc26.x86_64                         14/162 
   Upgrading        : libffi-3.1-12.fc26.x86_64                           15/162 
   Running scriptlet: libffi-3.1-12.fc26.x86_64                           15/162 
-  Upgrading        : p11-kit-0.23.8-1.fc26.x86_64                        16/162 
-  Running scriptlet: p11-kit-0.23.8-1.fc26.x86_64                        16/162 
+  Upgrading        : p11-kit-0.23.9-2.fc26.x86_64                        16/162 
+  Running scriptlet: p11-kit-0.23.9-2.fc26.x86_64                        16/162 
   Upgrading        : sqlite-libs-3.20.1-1.fc26.x86_64                    17/162 
   Running scriptlet: sqlite-libs-3.20.1-1.fc26.x86_64                    17/162 
-  Upgrading        : p11-kit-trust-0.23.8-1.fc26.x86_64                  18/162 
-  Running scriptlet: p11-kit-trust-0.23.8-1.fc26.x86_64                  18/162 
-  Upgrading        : nss-softokn-freebl-3.32.0-1.2.fc26.x86_64           19/162 
+  Upgrading        : p11-kit-trust-0.23.9-2.fc26.x86_64                  18/162 
+  Running scriptlet: p11-kit-trust-0.23.9-2.fc26.x86_64                  18/162 
+  Upgrading        : nss-softokn-freebl-3.33.0-1.1.fc26.x86_64           19/162 
   Upgrading        : libcrypt-nss-2.25-10.fc26.x86_64                    20/162 
   Running scriptlet: libcrypt-nss-2.25-10.fc26.x86_64                    20/162 
-  Upgrading        : nss-softokn-3.32.0-1.2.fc26.x86_64                  21/162 
-  Running scriptlet: nss-softokn-3.32.0-1.2.fc26.x86_64                  21/162 
+  Upgrading        : nss-softokn-3.33.0-1.1.fc26.x86_64                  21/162 
+  Running scriptlet: nss-softokn-3.33.0-1.1.fc26.x86_64                  21/162 
   Upgrading        : audit-libs-2.7.8-1.fc26.x86_64                      22/162 
   Running scriptlet: audit-libs-2.7.8-1.fc26.x86_64                      22/162 
   Upgrading        : dbus-libs-1:1.11.18-1.fc26.x86_64                   23/162 
@@ -249,14 +253,14 @@ Running transaction
   Running scriptlet: libmount-2.30.2-1.fc26.x86_64                       39/162 
   Upgrading        : libfdisk-2.30.2-1.fc26.x86_64                       40/162 
   Running scriptlet: libfdisk-2.30.2-1.fc26.x86_64                       40/162 
-  Upgrading        : nss-3.32.1-1.0.fc26.x86_64                          41/162 
-  Running scriptlet: nss-3.32.1-1.0.fc26.x86_64                          41/162 
-  Upgrading        : nss-sysinit-3.32.1-1.0.fc26.x86_64                  42/162 
-  Upgrading        : nss-tools-3.32.1-1.0.fc26.x86_64                    43/162 
+  Upgrading        : nss-3.33.0-1.0.fc26.x86_64                          41/162 
+  Running scriptlet: nss-3.33.0-1.0.fc26.x86_64                          41/162 
+  Upgrading        : nss-sysinit-3.33.0-1.0.fc26.x86_64                  42/162 
+  Upgrading        : nss-tools-3.33.0-1.0.fc26.x86_64                    43/162 
   Upgrading        : openldap-2.4.45-1.fc26.x86_64                       44/162 
   Running scriptlet: openldap-2.4.45-1.fc26.x86_64                       44/162 
-  Upgrading        : gnupg2-2.2.0-1.fc26.x86_64                          45/162 
-  Running scriptlet: gnupg2-2.2.0-1.fc26.x86_64                          45/162 
+  Upgrading        : gnupg2-2.2.1-1.fc26.x86_64                          45/162 
+  Running scriptlet: gnupg2-2.2.1-1.fc26.x86_64                          45/162 
   Upgrading        : gawk-4.1.4-5.fc26.x86_64                            46/162 
   Running scriptlet: gawk-4.1.4-5.fc26.x86_64                            46/162 
   Upgrading        : krb5-libs-1.15.1-28.fc26.x86_64                     47/162 
@@ -265,19 +269,19 @@ Running transaction
   Running scriptlet: file-libs-5.30-11.fc26.x86_64                       48/162 
   Upgrading        : libsmartcols-2.30.2-1.fc26.x86_64                   49/162 
   Running scriptlet: libsmartcols-2.30.2-1.fc26.x86_64                   49/162 
-  Upgrading        : libsss_idmap-1.15.3-4.fc26.x86_64                   50/162 
-  Running scriptlet: libsss_idmap-1.15.3-4.fc26.x86_64                   50/162 
-  Upgrading        : libsss_nss_idmap-1.15.3-4.fc26.x86_64               51/162 
-  Running scriptlet: libsss_nss_idmap-1.15.3-4.fc26.x86_64               51/162 
+  Upgrading        : libsss_idmap-1.15.3-5.fc26.x86_64                   50/162 
+  Running scriptlet: libsss_idmap-1.15.3-5.fc26.x86_64                   50/162 
+  Upgrading        : libsss_nss_idmap-1.15.3-5.fc26.x86_64               51/162 
+  Running scriptlet: libsss_nss_idmap-1.15.3-5.fc26.x86_64               51/162 
   Upgrading        : publicsuffix-list-dafsa-20170828-1.fc26.noarch      52/162 
   Upgrading        : libpsl-0.18.0-1.fc26.x86_64                         53/162 
   Running scriptlet: libpsl-0.18.0-1.fc26.x86_64                         53/162 
-  Upgrading        : libcurl-7.53.1-10.fc26.x86_64                       54/162 
-  Running scriptlet: libcurl-7.53.1-10.fc26.x86_64                       54/162 
+  Upgrading        : libcurl-7.53.1-11.fc26.x86_64                       54/162 
+  Running scriptlet: libcurl-7.53.1-11.fc26.x86_64                       54/162 
   Upgrading        : librepo-1.8.0-1.fc26.x86_64                         55/162 
   Running scriptlet: librepo-1.8.0-1.fc26.x86_64                         55/162 
   Upgrading        : python3-librepo-1.8.0-1.fc26.x86_64                 56/162 
-  Upgrading        : curl-7.53.1-10.fc26.x86_64                          57/162 
+  Upgrading        : curl-7.53.1-11.fc26.x86_64                          57/162 
   Upgrading        : rpm-plugin-selinux-4.13.0.1-7.fc26.x86_64           58/162 
   Upgrading        : rpm-libs-4.13.0.1-7.fc26.x86_64                     59/162 
   Running scriptlet: rpm-libs-4.13.0.1-7.fc26.x86_64                     59/162 
@@ -291,24 +295,24 @@ Running transaction
   Running scriptlet: rpm-build-libs-4.13.0.1-7.fc26.x86_64               64/162 
   Upgrading        : python3-rpm-4.13.0.1-7.fc26.x86_64                  65/162 
   Upgrading        : libreport-filesystem-2.9.1-3.fc26.x86_64            66/162 
-  Upgrading        : dnf-conf-2.7.3-1.fc26.noarch                        67/162 
-  Upgrading        : python3-dnf-2.7.3-1.fc26.noarch                     68/162 
-  Upgrading        : dnf-2.7.3-1.fc26.noarch                             69/162 
-  Running scriptlet: dnf-2.7.3-1.fc26.noarch                             69/162 
-  Upgrading        : dnf-yum-2.7.3-1.fc26.noarch                         70/162 
+  Upgrading        : dnf-conf-2.7.5-1.fc26.noarch                        67/162 
+  Upgrading        : python3-dnf-2.7.5-1.fc26.noarch                     68/162 
+  Upgrading        : dnf-2.7.5-1.fc26.noarch                             69/162 
+  Running scriptlet: dnf-2.7.5-1.fc26.noarch                             69/162 
+  Upgrading        : dnf-yum-2.7.5-1.fc26.noarch                         70/162 
   Upgrading        : rpm-plugin-systemd-inhibit-4.13.0.1-7.fc26.x86_6    71/162 
-  Upgrading        : sssd-client-1.15.3-4.fc26.x86_64                    72/162 
-  Running scriptlet: sssd-client-1.15.3-4.fc26.x86_64                    72/162 
+  Upgrading        : sssd-client-1.15.3-5.fc26.x86_64                    72/162 
+  Running scriptlet: sssd-client-1.15.3-5.fc26.x86_64                    72/162 
   Upgrading        : util-linux-2.30.2-1.fc26.x86_64                     73/162 
   Running scriptlet: util-linux-2.30.2-1.fc26.x86_64                     73/162 
-  Upgrading        : gnupg2-smime-2.2.0-1.fc26.x86_64                    74/162 
+  Upgrading        : gnupg2-smime-2.2.1-1.fc26.x86_64                    74/162 
   Upgrading        : python3-six-1.10.0-9.fc26.noarch                    75/162 
   Running scriptlet: dbus-1:1.11.18-1.fc26.x86_64                        76/162 
   Upgrading        : dbus-1:1.11.18-1.fc26.x86_64                        76/162 
   Running scriptlet: dbus-1:1.11.18-1.fc26.x86_64                        76/162 
   Upgrading        : tar-2:1.29-5.fc26.x86_64                            77/162 
   Running scriptlet: tar-2:1.29-5.fc26.x86_64                            77/162 
-  Upgrading        : vim-minimal-2:8.0.1176-1.fc26.x86_64                78/162 
+  Upgrading        : vim-minimal-2:8.0.1187-1.fc26.x86_64                78/162 
   Upgrading        : lz4-libs-1.8.0-1.fc26.x86_64                        79/162 
   Running scriptlet: lz4-libs-1.8.0-1.fc26.x86_64                        79/162 
   Upgrading        : xkeyboard-config-2.21-3.fc26.noarch                 80/162 
@@ -487,15 +491,15 @@ error: cannot open Packages database in /var/lib/rpm
   Verifying        : ca-certificates-2017.2.16-1.0.fc26.noarch            3/162 
   Verifying        : coreutils-8.27-6.fc26.x86_64                         4/162 
   Verifying        : coreutils-common-8.27-6.fc26.x86_64                  5/162 
-  Verifying        : curl-7.53.1-10.fc26.x86_64                           6/162 
-  Verifying        : libcurl-7.53.1-10.fc26.x86_64                        7/162 
+  Verifying        : curl-7.53.1-11.fc26.x86_64                           6/162 
+  Verifying        : libcurl-7.53.1-11.fc26.x86_64                        7/162 
   Verifying        : dbus-1:1.11.18-1.fc26.x86_64                         8/162 
   Verifying        : dbus-libs-1:1.11.18-1.fc26.x86_64                    9/162 
-  Verifying        : dnf-2.7.3-1.fc26.noarch                             10/162 
-  Verifying        : python3-dnf-2.7.3-1.fc26.noarch                     11/162 
-  Verifying        : dnf-conf-2.7.3-1.fc26.noarch                        12/162 
+  Verifying        : dnf-2.7.5-1.fc26.noarch                             10/162 
+  Verifying        : python3-dnf-2.7.5-1.fc26.noarch                     11/162 
+  Verifying        : dnf-conf-2.7.5-1.fc26.noarch                        12/162 
   Verifying        : python3-hawkey-0.11.0-1.fc26.x86_64                 13/162 
-  Verifying        : dnf-yum-2.7.3-1.fc26.noarch                         14/162 
+  Verifying        : dnf-yum-2.7.5-1.fc26.noarch                         14/162 
   Verifying        : libdnf-0.11.0-1.fc26.x86_64                         15/162 
   Verifying        : emacs-filesystem-1:25.3-3.fc26.noarch               16/162 
   Verifying        : expat-2.2.4-1.fc26.x86_64                           17/162 
@@ -505,8 +509,8 @@ error: cannot open Packages database in /var/lib/rpm
   Verifying        : glibc-common-2.25-10.fc26.x86_64                    21/162 
   Verifying        : glibc-langpack-en-2.25-10.fc26.x86_64               22/162 
   Verifying        : libcrypt-nss-2.25-10.fc26.x86_64                    23/162 
-  Verifying        : gnupg2-2.2.0-1.fc26.x86_64                          24/162 
-  Verifying        : gnupg2-smime-2.2.0-1.fc26.x86_64                    25/162 
+  Verifying        : gnupg2-2.2.1-1.fc26.x86_64                          24/162 
+  Verifying        : gnupg2-smime-2.2.1-1.fc26.x86_64                    25/162 
   Verifying        : gnutls-3.5.15-1.fc26.x86_64                         26/162 
   Verifying        : grep-3.1-1.fc26.x86_64                              27/162 
   Verifying        : krb5-libs-1.15.1-28.fc26.x86_64                     28/162 
@@ -530,20 +534,20 @@ error: cannot open Packages database in /var/lib/rpm
   Verifying        : libsepol-2.6-2.fc26.x86_64                          46/162 
   Verifying        : libsolv-0.6.29-2.fc26.x86_64                        47/162 
   Verifying        : libssh2-1.8.0-5.fc26.x86_64                         48/162 
-  Verifying        : libsss_idmap-1.15.3-4.fc26.x86_64                   49/162 
-  Verifying        : libsss_nss_idmap-1.15.3-4.fc26.x86_64               50/162 
+  Verifying        : libsss_idmap-1.15.3-5.fc26.x86_64                   49/162 
+  Verifying        : libsss_nss_idmap-1.15.3-5.fc26.x86_64               50/162 
   Verifying        : lz4-libs-1.8.0-1.fc26.x86_64                        51/162 
-  Verifying        : nspr-4.16.0-1.fc26.x86_64                           52/162 
-  Verifying        : nss-3.32.1-1.0.fc26.x86_64                          53/162 
-  Verifying        : nss-softokn-3.32.0-1.2.fc26.x86_64                  54/162 
-  Verifying        : nss-util-3.32.0-1.0.fc26.x86_64                     55/162 
-  Verifying        : nss-softokn-freebl-3.32.0-1.2.fc26.x86_64           56/162 
-  Verifying        : nss-tools-3.32.1-1.0.fc26.x86_64                    57/162 
-  Verifying        : nss-sysinit-3.32.1-1.0.fc26.x86_64                  58/162 
+  Verifying        : nspr-4.17.0-1.fc26.x86_64                           52/162 
+  Verifying        : nss-3.33.0-1.0.fc26.x86_64                          53/162 
+  Verifying        : nss-softokn-3.33.0-1.1.fc26.x86_64                  54/162 
+  Verifying        : nss-util-3.33.0-1.0.fc26.x86_64                     55/162 
+  Verifying        : nss-softokn-freebl-3.33.0-1.1.fc26.x86_64           56/162 
+  Verifying        : nss-tools-3.33.0-1.0.fc26.x86_64                    57/162 
+  Verifying        : nss-sysinit-3.33.0-1.0.fc26.x86_64                  58/162 
   Verifying        : openldap-2.4.45-1.fc26.x86_64                       59/162 
   Verifying        : openssl-libs-1:1.1.0f-7.fc26.x86_64                 60/162 
-  Verifying        : p11-kit-0.23.8-1.fc26.x86_64                        61/162 
-  Verifying        : p11-kit-trust-0.23.8-1.fc26.x86_64                  62/162 
+  Verifying        : p11-kit-0.23.9-2.fc26.x86_64                        61/162 
+  Verifying        : p11-kit-trust-0.23.9-2.fc26.x86_64                  62/162 
   Verifying        : pcre-8.41-1.fc26.x86_64                             63/162 
   Verifying        : publicsuffix-list-dafsa-20170828-1.fc26.noarch      64/162 
   Verifying        : python3-3.6.2-8.fc26.x86_64                         65/162 
@@ -559,9 +563,9 @@ error: cannot open Packages database in /var/lib/rpm
   Verifying        : python3-setuptools-36.2.0-2.fc26.noarch             75/162 
   Verifying        : python3-six-1.10.0-9.fc26.noarch                    76/162 
   Verifying        : sqlite-libs-3.20.1-1.fc26.x86_64                    77/162 
-  Verifying        : sssd-client-1.15.3-4.fc26.x86_64                    78/162 
+  Verifying        : sssd-client-1.15.3-5.fc26.x86_64                    78/162 
   Verifying        : tar-2:1.29-5.fc26.x86_64                            79/162 
-  Verifying        : vim-minimal-2:8.0.1176-1.fc26.x86_64                80/162 
+  Verifying        : vim-minimal-2:8.0.1187-1.fc26.x86_64                80/162 
   Verifying        : xkeyboard-config-2.21-3.fc26.noarch                 81/162 
   Verifying        : audit-libs-2.7.7-1.fc26.x86_64                      82/162 
   Verifying        : bash-4.4.12-5.fc26.x86_64                           83/162 
@@ -651,12 +655,12 @@ Upgraded:
   ca-certificates.noarch 2017.2.16-1.0.fc26                                     
   coreutils.x86_64 8.27-6.fc26                                                  
   coreutils-common.x86_64 8.27-6.fc26                                           
-  curl.x86_64 7.53.1-10.fc26                                                    
+  curl.x86_64 7.53.1-11.fc26                                                    
   dbus.x86_64 1:1.11.18-1.fc26                                                  
   dbus-libs.x86_64 1:1.11.18-1.fc26                                             
-  dnf.noarch 2.7.3-1.fc26                                                       
-  dnf-conf.noarch 2.7.3-1.fc26                                                  
-  dnf-yum.noarch 2.7.3-1.fc26                                                   
+  dnf.noarch 2.7.5-1.fc26                                                       
+  dnf-conf.noarch 2.7.5-1.fc26                                                  
+  dnf-yum.noarch 2.7.5-1.fc26                                                   
   emacs-filesystem.noarch 1:25.3-3.fc26                                         
   expat.x86_64 2.2.4-1.fc26                                                     
   file-libs.x86_64 5.30-11.fc26                                                 
@@ -664,14 +668,14 @@ Upgraded:
   glibc.x86_64 2.25-10.fc26                                                     
   glibc-common.x86_64 2.25-10.fc26                                              
   glibc-langpack-en.x86_64 2.25-10.fc26                                         
-  gnupg2.x86_64 2.2.0-1.fc26                                                    
-  gnupg2-smime.x86_64 2.2.0-1.fc26                                              
+  gnupg2.x86_64 2.2.1-1.fc26                                                    
+  gnupg2-smime.x86_64 2.2.1-1.fc26                                              
   gnutls.x86_64 3.5.15-1.fc26                                                   
   grep.x86_64 3.1-1.fc26                                                        
   krb5-libs.x86_64 1.15.1-28.fc26                                               
   libblkid.x86_64 2.30.2-1.fc26                                                 
   libcrypt-nss.x86_64 2.25-10.fc26                                              
-  libcurl.x86_64 7.53.1-10.fc26                                                 
+  libcurl.x86_64 7.53.1-11.fc26                                                 
   libdb.x86_64 5.3.28-24.fc26                                                   
   libdb-utils.x86_64 5.3.28-24.fc26                                             
   libdnf.x86_64 0.11.0-1.fc26                                                   
@@ -689,25 +693,25 @@ Upgraded:
   libsmartcols.x86_64 2.30.2-1.fc26                                             
   libsolv.x86_64 0.6.29-2.fc26                                                  
   libssh2.x86_64 1.8.0-5.fc26                                                   
-  libsss_idmap.x86_64 1.15.3-4.fc26                                             
-  libsss_nss_idmap.x86_64 1.15.3-4.fc26                                         
+  libsss_idmap.x86_64 1.15.3-5.fc26                                             
+  libsss_nss_idmap.x86_64 1.15.3-5.fc26                                         
   libuuid.x86_64 2.30.2-1.fc26                                                  
   lz4-libs.x86_64 1.8.0-1.fc26                                                  
-  nspr.x86_64 4.16.0-1.fc26                                                     
-  nss.x86_64 3.32.1-1.0.fc26                                                    
-  nss-softokn.x86_64 3.32.0-1.2.fc26                                            
-  nss-softokn-freebl.x86_64 3.32.0-1.2.fc26                                     
-  nss-sysinit.x86_64 3.32.1-1.0.fc26                                            
-  nss-tools.x86_64 3.32.1-1.0.fc26                                              
-  nss-util.x86_64 3.32.0-1.0.fc26                                               
+  nspr.x86_64 4.17.0-1.fc26                                                     
+  nss.x86_64 3.33.0-1.0.fc26                                                    
+  nss-softokn.x86_64 3.33.0-1.1.fc26                                            
+  nss-softokn-freebl.x86_64 3.33.0-1.1.fc26                                     
+  nss-sysinit.x86_64 3.33.0-1.0.fc26                                            
+  nss-tools.x86_64 3.33.0-1.0.fc26                                              
+  nss-util.x86_64 3.33.0-1.0.fc26                                               
   openldap.x86_64 2.4.45-1.fc26                                                 
   openssl-libs.x86_64 1:1.1.0f-7.fc26                                           
-  p11-kit.x86_64 0.23.8-1.fc26                                                  
-  p11-kit-trust.x86_64 0.23.8-1.fc26                                            
+  p11-kit.x86_64 0.23.9-2.fc26                                                  
+  p11-kit-trust.x86_64 0.23.9-2.fc26                                            
   pcre.x86_64 8.41-1.fc26                                                       
   publicsuffix-list-dafsa.noarch 20170828-1.fc26                                
   python3.x86_64 3.6.2-8.fc26                                                   
-  python3-dnf.noarch 2.7.3-1.fc26                                               
+  python3-dnf.noarch 2.7.5-1.fc26                                               
   python3-hawkey.x86_64 0.11.0-1.fc26                                           
   python3-librepo.x86_64 1.8.0-1.fc26                                           
   python3-libs.x86_64 3.6.2-8.fc26                                              
@@ -720,19 +724,18 @@ Upgraded:
   rpm-plugin-selinux.x86_64 4.13.0.1-7.fc26                                     
   rpm-plugin-systemd-inhibit.x86_64 4.13.0.1-7.fc26                             
   sqlite-libs.x86_64 3.20.1-1.fc26                                              
-  sssd-client.x86_64 1.15.3-4.fc26                                              
+  sssd-client.x86_64 1.15.3-5.fc26                                              
   system-python.x86_64 3.6.2-8.fc26                                             
   system-python-libs.x86_64 3.6.2-8.fc26                                        
   tar.x86_64 2:1.29-5.fc26                                                      
   util-linux.x86_64 2.30.2-1.fc26                                               
-  vim-minimal.x86_64 2:8.0.1176-1.fc26                                          
+  vim-minimal.x86_64 2:8.0.1187-1.fc26                                          
   xkeyboard-config.noarch 2.21-3.fc26                                           
 
 Complete!
-[91m+ '[' devel = latest ']'
-+ openssl=openssl
+[91m+ openssl=openssl
 [0m[91m+ dnf install -y git gcc gcc-c++ cmake make swig pkgconfig libuuid-devel python-devel python2-devel python3-devel cyrus-sasl-devel libwebsockets-devel openssl-devel
-[0mLast metadata expiration check: 0:02:42 ago on Fri Oct 13 14:13:04 2017.
+[0mLast metadata expiration check: 0:03:23 ago on Wed Oct 25 14:25:14 2017.
 Dependencies resolved.
 ================================================================================
  Package                  Arch     Version                      Repository
@@ -869,131 +872,128 @@ Install  120 Packages
 Total download size: 105 M
 Installed size: 320 M
 Downloading Packages:
-[MIRROR] swig-3.0.12-7.fc26.x86_64.rpm: Status code: 404 for http://mirror.rnet.missouri.edu/fedora/releases/26/Everything/x86_64/os/Packages/s/swig-3.0.12-7.fc26.x86_64.rpm
-[MIRROR] make-4.2.1-2.fc26.x86_64.rpm: Status code: 404 for http://mirror.rnet.missouri.edu/fedora/releases/26/Everything/x86_64/os/Packages/m/make-4.2.1-2.fc26.x86_64.rpm
-[MIRROR] gc-7.6.0-2.fc26.x86_64.rpm: Status code: 404 for http://mirror.rnet.missouri.edu/fedora/releases/26/Everything/x86_64/os/Packages/g/gc-7.6.0-2.fc26.x86_64.rpm
-(1/120): gc-7.6.0-2.fc26.x86_64.rpm              91 kB/s | 108 kB     00:01    
-(2/120): make-4.2.1-2.fc26.x86_64.rpm           383 kB/s | 492 kB     00:01    
-(3/120): swig-3.0.12-7.fc26.x86_64.rpm          1.0 MB/s | 1.5 MB     00:01    
-(4/120): libatomic_ops-7.4.4-2.fc26.x86_64.rpm  108 kB/s |  31 kB     00:00    
-(5/120): libtool-ltdl-2.4.6-17.fc26.x86_64.rpm  460 kB/s |  55 kB     00:00    
-(6/120): guile-2.0.14-1.fc26.x86_64.rpm         3.9 MB/s | 3.5 MB     00:00    
-(7/120): git-2.13.6-1.fc26.x86_64.rpm           986 kB/s | 1.1 MB     00:01    
-(8/120): perl-Git-2.13.6-1.fc26.noarch.rpm      406 kB/s |  68 kB     00:00    
-(9/120): perl-Error-0.17024-8.fc26.noarch.rpm    69 kB/s |  44 kB     00:00    
-(10/120): perl-Getopt-Long-2.49.1-2.fc26.noarch 275 kB/s |  61 kB     00:00    
-(11/120): git-core-doc-2.13.6-1.fc26.x86_64.rpm 1.3 MB/s | 2.2 MB     00:01    
-(12/120): perl-PathTools-3.63-367.fc26.x86_64.r 599 kB/s |  87 kB     00:00    
-(13/120): git-core-2.13.6-1.fc26.x86_64.rpm     1.7 MB/s | 4.0 MB     00:02    
-(14/120): less-487-3.fc26.x86_64.rpm            858 kB/s | 157 kB     00:00    
-(15/120): perl-TermReadKey-2.37-2.fc26.x86_64.r  93 kB/s |  37 kB     00:00    
-(16/120): perl-Carp-1.40-366.fc26.noarch.rpm     97 kB/s |  28 kB     00:00    
-(17/120): perl-Exporter-5.72-367.fc26.noarch.rp  89 kB/s |  32 kB     00:00    
-(18/120): perl-Time-Local-1.250-2.fc26.noarch.r  81 kB/s |  30 kB     00:00    
-(19/120): perl-Text-ParseWords-3.30-366.fc26.no  72 kB/s |  16 kB     00:00    
-(20/120): perl-Pod-Usage-1.69-2.fc26.noarch.rpm  98 kB/s |  33 kB     00:00    
-(21/120): perl-constant-1.33-368.fc26.noarch.rp  98 kB/s |  23 kB     00:00    
-(22/120): perl-parent-0.236-2.fc26.noarch.rpm    72 kB/s |  18 kB     00:00    
-(23/120): perl-Pod-Perldoc-3.28-1.fc26.noarch.r 256 kB/s |  86 kB     00:00    
-(24/120): perl-podlators-4.09-2.fc26.noarch.rpm 308 kB/s | 114 kB     00:00    
-(25/120): perl-File-Temp-0.230.400-2.fc26.noarc 165 kB/s |  61 kB     00:00    
-(26/120): perl-HTTP-Tiny-0.070-2.fc26.noarch.rp 275 kB/s |  56 kB     00:00    
-(27/120): groff-base-1.22.3-9.fc26.x86_64.rpm   1.1 MB/s | 1.0 MB     00:00    
-(28/120): perl-Term-ANSIColor-4.06-2.fc26.noarc 102 kB/s |  44 kB     00:00    
-(29/120): perl-Pod-Simple-3.35-2.fc26.noarch.rp 372 kB/s | 211 kB     00:00    
-(30/120): perl-Term-Cap-1.17-366.fc26.noarch.rp  95 kB/s |  21 kB     00:00    
-(31/120): perl-File-Path-2.12-367.fc26.noarch.r 116 kB/s |  34 kB     00:00    
-(32/120): perl-MIME-Base64-3.15-366.fc26.x86_64  82 kB/s |  28 kB     00:00    
-(33/120): perl-Socket-2.024-2.fc26.x86_64.rpm   163 kB/s |  55 kB     00:00    
-(34/120): perl-Pod-Escapes-1.07-366.fc26.noarch  70 kB/s |  19 kB     00:00    
-(35/120): perl-Text-Tabs+Wrap-2013.0523-366.fc2  82 kB/s |  22 kB     00:00    
-(36/120): binutils-2.27-24.fc26.x86_64.rpm      3.1 MB/s | 5.6 MB     00:01    
-(37/120): isl-0.16.1-1.fc26.x86_64.rpm          1.6 MB/s | 821 kB     00:00    
-(38/120): libmpc-1.0.2-6.fc26.x86_64.rpm        289 kB/s |  55 kB     00:00    
-(39/120): cpp-7.2.1-2.fc26.x86_64.rpm           1.8 MB/s | 9.2 MB     00:05    
-(40/120): gcc-7.2.1-2.fc26.x86_64.rpm           2.0 MB/s |  21 MB     00:10    
-(41/120): gcc-c++-7.2.1-2.fc26.x86_64.rpm       1.4 MB/s |  11 MB     00:07    
-(42/120): cmake-3.9.1-1.fc26.x86_64.rpm         1.3 MB/s | 7.4 MB     00:05    
-(43/120): cmake-filesystem-3.9.1-1.fc26.x86_64. 155 kB/s |  35 kB     00:00    
-(44/120): libuv-1.11.0-1.fc26.x86_64.rpm        263 kB/s | 112 kB     00:00    
-(45/120): pkgconf-pkg-config-1.3.9-1.fc26.x86_6 100 kB/s |  12 kB     00:00    
-(46/120): cmake-data-3.9.1-1.fc26.noarch.rpm    1.6 MB/s | 1.2 MB     00:00    
-(47/120): pkgconf-1.3.9-1.fc26.x86_64.rpm       220 kB/s |  30 kB     00:00    
-(48/120): pkgconf-m4-1.3.9-1.fc26.noarch.rpm     75 kB/s |  13 kB     00:00    
-(49/120): rhash-1.3.4-2.fc26.x86_64.rpm         199 kB/s | 125 kB     00:00    
-(50/120): libpkgconf-1.3.9-1.fc26.x86_64.rpm    160 kB/s |  30 kB     00:00    
-(51/120): libuuid-devel-2.30.2-1.fc26.x86_64.rp 450 kB/s |  89 kB     00:00    
-(52/120): python2-2.7.13-12.fc26.x86_64.rpm     308 kB/s |  98 kB     00:00    
-(53/120): python2-devel-2.7.13-12.fc26.x86_64.r 761 kB/s | 408 kB     00:00    
-(54/120): python-rpm-macros-3-20.fc26.noarch.rp  24 kB/s | 9.6 kB     00:00    
-(55/120): python2-rpm-macros-3-20.fc26.noarch.r  32 kB/s | 9.0 kB     00:00    
-(56/120): python-srpm-macros-3-20.fc26.noarch.r  41 kB/s | 9.2 kB     00:00    
-(57/120): python2-pip-9.0.1-9.fc26.noarch.rpm   2.4 MB/s | 1.8 MB     00:00    
-(58/120): python3-rpm-macros-3-20.fc26.noarch.r  25 kB/s | 9.0 kB     00:00    
-(59/120): redhat-rpm-config-63-1.fc26.noarch.rp 441 kB/s |  61 kB     00:00    
-(60/120): python3-devel-3.6.2-8.fc26.x86_64.rpm 756 kB/s | 861 kB     00:01    
-(61/120): dwz-0.12-3.fc26.x86_64.rpm            284 kB/s | 105 kB     00:00    
-(62/120): fedora-rpm-macros-26-2.fc26.noarch.rp  26 kB/s | 6.5 kB     00:00    
-(63/120): fpc-srpm-macros-1.1-2.fc26.noarch.rpm  28 kB/s | 7.0 kB     00:00    
-(64/120): ghc-srpm-macros-1.4.2-5.fc26.noarch.r  35 kB/s | 7.7 kB     00:00    
-(65/120): gnat-srpm-macros-4-2.fc26.noarch.rpm   71 kB/s | 8.1 kB     00:00    
-(66/120): go-srpm-macros-2-8.fc26.noarch.rpm     29 kB/s | 7.7 kB     00:00    
-(67/120): perl-srpm-macros-1-21.fc26.noarch.rpm  68 kB/s | 9.0 kB     00:00    
-(68/120): ocaml-srpm-macros-4-2.fc26.noarch.rpm  19 kB/s | 7.5 kB     00:00    
-(69/120): qt5-srpm-macros-5.8.0-2.fc26.noarch.r  35 kB/s | 8.2 kB     00:00    
-(70/120): zip-3.0-18.fc26.x86_64.rpm            474 kB/s | 269 kB     00:00    
-(71/120): cyrus-sasl-devel-2.1.26-32.fc26.x86_6 851 kB/s | 314 kB     00:00    
-(72/120): cyrus-sasl-2.1.26-32.fc26.x86_64.rpm  471 kB/s |  90 kB     00:00    
-(73/120): libwebsockets-devel-2.2.1-1.fc26.x86_ 329 kB/s |  79 kB     00:00    
-(74/120): libwebsockets-2.2.1-1.fc26.x86_64.rpm 303 kB/s | 100 kB     00:00    
-(75/120): zlib-devel-1.2.11-2.fc26.x86_64.rpm   230 kB/s |  56 kB     00:00    
-(76/120): python2-libs-2.7.13-12.fc26.x86_64.rp 1.7 MB/s | 6.3 MB     00:03    
-(77/120): libkadm5-1.15.1-28.fc26.x86_64.rpm    839 kB/s | 176 kB     00:00    
-(78/120): unzip-6.0-34.fc26.x86_64.rpm          1.3 MB/s | 186 kB     00:00    
-(79/120): libstdc++-7.2.1-2.fc26.x86_64.rpm     1.2 MB/s | 462 kB     00:00    
-(80/120): krb5-devel-1.15.1-28.fc26.x86_64.rpm  666 kB/s | 523 kB     00:00    
-(81/120): python2-setuptools-36.2.0-2.fc26.noar 1.5 MB/s | 597 kB     00:00    
-(82/120): openssl-devel-1.1.0f-7.fc26.x86_64.rp 909 kB/s | 1.9 MB     00:02    
-(83/120): perl-libs-5.24.3-395.fc26.x86_64.rpm  1.7 MB/s | 1.5 MB     00:00    
-(84/120): perl-Unicode-Normalize-1.25-366.fc26. 155 kB/s |  79 kB     00:00    
-(85/120): perl-threads-shared-1.57-1.fc26.x86_6 272 kB/s |  45 kB     00:00    
-(86/120): perl-threads-2.16-1.fc26.x86_64.rpm   161 kB/s |  58 kB     00:00    
-(87/120): perl-Errno-1.25-395.fc26.x86_64.rpm   358 kB/s |  69 kB     00:00    
-(88/120): perl-IO-1.36-395.fc26.x86_64.rpm      973 kB/s | 134 kB     00:00    
-(89/120): perl-Scalar-List-Utils-1.48-1.fc26.x8 107 kB/s |  65 kB     00:00    
-(90/120): perl-macros-5.24.3-395.fc26.x86_64.rp 336 kB/s |  65 kB     00:00    
-(91/120): perl-Encode-2.88-6.fc26.x86_64.rpm    1.3 MB/s | 1.5 MB     00:01    
-(92/120): libselinux-devel-2.6-7.fc26.x86_64.rp 648 kB/s | 197 kB     00:00    
-(93/120): libsepol-devel-2.6-2.fc26.x86_64.rpm  199 kB/s |  80 kB     00:00    
-(94/120): keyutils-libs-devel-1.5.10-1.fc26.x86 118 kB/s |  46 kB     00:00    
-(95/120): libcom_err-devel-1.43.4-2.fc26.x86_64  85 kB/s |  35 kB     00:00    
-(96/120): libverto-devel-0.2.6-7.fc26.x86_64.rp  27 kB/s |  15 kB     00:00    
-(97/120): openssh-clients-7.5p1-3.fc26.x86_64.r 748 kB/s | 652 kB     00:00    
-(98/120): openssh-7.5p1-3.fc26.x86_64.rpm       613 kB/s | 468 kB     00:00    
-(99/120): fipscheck-lib-1.5.0-1.fc26.x86_64.rpm  26 kB/s |  13 kB     00:00    
-(100/120): libedit-3.1-17.20160618cvs.fc26.x86_ 195 kB/s |  96 kB     00:00    
-(101/120): fipscheck-1.5.0-1.fc26.x86_64.rpm     65 kB/s |  24 kB     00:00    
-(102/120): glibc-devel-2.25-10.fc26.x86_64.rpm  807 kB/s | 966 kB     00:01    
-(103/120): libgomp-7.2.1-2.fc26.x86_64.rpm      650 kB/s | 197 kB     00:00    
-(104/120): jsoncpp-1.8.1-3.fc26.x86_64.rpm      648 kB/s |  83 kB     00:00    
-(105/120): libstdc++-devel-7.2.1-2.fc26.x86_64. 870 kB/s | 1.9 MB     00:02    
-(106/120): pcre-devel-8.41-1.fc26.x86_64.rpm    859 kB/s | 548 kB     00:00    
-(107/120): pcre-cpp-8.41-1.fc26.x86_64.rpm      258 kB/s |  40 kB     00:00    
-(108/120): pcre-utf32-8.41-1.fc26.x86_64.rpm    715 kB/s | 180 kB     00:00    
-(109/120): pcre-utf16-8.41-1.fc26.x86_64.rpm    493 kB/s | 189 kB     00:00    
-(110/120): glibc-headers-2.25-10.fc26.x86_64.rp 1.0 MB/s | 515 kB     00:00    
-(111/120): perl-Mozilla-CA-20160104-4.fc26.noar  40 kB/s |  13 kB     00:00    
-(112/120): perl-IO-Socket-IP-0.39-1.fc26.noarch 184 kB/s |  45 kB     00:00    
-(113/120): perl-5.24.3-395.fc26.x86_64.rpm      667 kB/s | 6.1 MB     00:09    
-(114/120): perl-IO-Socket-SSL-2.049-1.fc26.noar 595 kB/s | 270 kB     00:00    
-(115/120): perl-Net-SSLeay-1.81-1.fc26.x86_64.r 1.1 MB/s | 333 kB     00:00    
-(116/120): perl-URI-1.71-6.fc26.noarch.rpm      566 kB/s | 115 kB     00:00    
-(117/120): perl-Data-Dumper-2.161-2.fc26.x86_64 221 kB/s |  54 kB     00:00    
-(118/120): openssl-1.1.0f-7.fc26.x86_64.rpm     522 kB/s | 543 kB     00:01    
-(119/120): kernel-headers-4.13.5-200.fc26.x86_6 495 kB/s | 1.1 MB     00:02    
-(120/120): perl-libnet-3.10-3.fc26.noarch.rpm   651 kB/s | 119 kB     00:00    
+(1/120): gc-7.6.0-2.fc26.x86_64.rpm             225 kB/s | 108 kB     00:00    
+(2/120): make-4.2.1-2.fc26.x86_64.rpm           601 kB/s | 492 kB     00:00    
+(3/120): libatomic_ops-7.4.4-2.fc26.x86_64.rpm  284 kB/s |  31 kB     00:00    
+(4/120): libtool-ltdl-2.4.6-17.fc26.x86_64.rpm  476 kB/s |  55 kB     00:00    
+(5/120): swig-3.0.12-7.fc26.x86_64.rpm          1.1 MB/s | 1.5 MB     00:01    
+(6/120): git-2.13.6-1.fc26.x86_64.rpm           2.0 MB/s | 1.1 MB     00:00    
+(7/120): git-core-doc-2.13.6-1.fc26.x86_64.rpm  4.4 MB/s | 2.2 MB     00:00    
+(8/120): perl-Git-2.13.6-1.fc26.noarch.rpm      1.5 MB/s |  68 kB     00:00    
+(9/120): perl-Error-0.17024-8.fc26.noarch.rpm   204 kB/s |  44 kB     00:00    
+(10/120): perl-Getopt-Long-2.49.1-2.fc26.noarch 350 kB/s |  61 kB     00:00    
+(11/120): git-core-2.13.6-1.fc26.x86_64.rpm     2.9 MB/s | 4.0 MB     00:01    
+(12/120): perl-PathTools-3.63-367.fc26.x86_64.r 432 kB/s |  87 kB     00:00    
+(13/120): guile-2.0.14-1.fc26.x86_64.rpm        1.5 MB/s | 3.5 MB     00:02    
+(14/120): perl-TermReadKey-2.37-2.fc26.x86_64.r 185 kB/s |  37 kB     00:00    
+(15/120): perl-Carp-1.40-366.fc26.noarch.rpm    247 kB/s |  28 kB     00:00    
+(16/120): perl-Exporter-5.72-367.fc26.noarch.rp 276 kB/s |  32 kB     00:00    
+(17/120): perl-Time-Local-1.250-2.fc26.noarch.r 267 kB/s |  30 kB     00:00    
+(18/120): less-487-3.fc26.x86_64.rpm            449 kB/s | 157 kB     00:00    
+(19/120): perl-Text-ParseWords-3.30-366.fc26.no 249 kB/s |  16 kB     00:00    
+(20/120): perl-Pod-Usage-1.69-2.fc26.noarch.rpm 273 kB/s |  33 kB     00:00    
+(21/120): perl-constant-1.33-368.fc26.noarch.rp 202 kB/s |  23 kB     00:00    
+(22/120): perl-parent-0.236-2.fc26.noarch.rpm   297 kB/s |  18 kB     00:00    
+(23/120): perl-podlators-4.09-2.fc26.noarch.rpm 567 kB/s | 114 kB     00:00    
+(24/120): perl-File-Temp-0.230.400-2.fc26.noarc 520 kB/s |  61 kB     00:00    
+(25/120): perl-HTTP-Tiny-0.070-2.fc26.noarch.rp 576 kB/s |  56 kB     00:00    
+(26/120): perl-Pod-Perldoc-3.28-1.fc26.noarch.r 182 kB/s |  86 kB     00:00    
+(27/120): perl-Pod-Simple-3.35-2.fc26.noarch.rp 901 kB/s | 211 kB     00:00    
+(28/120): perl-Term-Cap-1.17-366.fc26.noarch.rp 342 kB/s |  21 kB     00:00    
+(29/120): perl-Term-ANSIColor-4.06-2.fc26.noarc 125 kB/s |  44 kB     00:00    
+(30/120): perl-File-Path-2.12-367.fc26.noarch.r 296 kB/s |  34 kB     00:00    
+(31/120): perl-Socket-2.024-2.fc26.x86_64.rpm   904 kB/s |  55 kB     00:00    
+(32/120): perl-MIME-Base64-3.15-366.fc26.x86_64 234 kB/s |  28 kB     00:00    
+(33/120): perl-Pod-Escapes-1.07-366.fc26.noarch 308 kB/s |  19 kB     00:00    
+(34/120): groff-base-1.22.3-9.fc26.x86_64.rpm   994 kB/s | 1.0 MB     00:01    
+(35/120): perl-Text-Tabs+Wrap-2013.0523-366.fc2 178 kB/s |  22 kB     00:00    
+(36/120): cpp-7.2.1-2.fc26.x86_64.rpm           2.2 MB/s | 9.2 MB     00:04    
+(37/120): isl-0.16.1-1.fc26.x86_64.rpm          1.0 MB/s | 821 kB     00:00    
+(38/120): libmpc-1.0.2-6.fc26.x86_64.rpm        832 kB/s |  55 kB     00:00    
+(39/120): binutils-2.27-24.fc26.x86_64.rpm      955 kB/s | 5.6 MB     00:05    
+(40/120): cmake-3.9.1-1.fc26.x86_64.rpm         6.0 MB/s | 7.4 MB     00:01    
+(41/120): cmake-data-3.9.1-1.fc26.noarch.rpm    6.9 MB/s | 1.2 MB     00:00    
+(42/120): cmake-filesystem-3.9.1-1.fc26.x86_64. 650 kB/s |  35 kB     00:00    
+(43/120): libuv-1.11.0-1.fc26.x86_64.rpm        335 kB/s | 112 kB     00:00    
+(44/120): rhash-1.3.4-2.fc26.x86_64.rpm         504 kB/s | 125 kB     00:00    
+(45/120): pkgconf-pkg-config-1.3.9-1.fc26.x86_6 291 kB/s |  12 kB     00:00    
+(46/120): pkgconf-1.3.9-1.fc26.x86_64.rpm       648 kB/s |  30 kB     00:00    
+(47/120): pkgconf-m4-1.3.9-1.fc26.noarch.rpm    309 kB/s |  13 kB     00:00    
+(48/120): libpkgconf-1.3.9-1.fc26.x86_64.rpm    680 kB/s |  30 kB     00:00    
+(49/120): libuuid-devel-2.30.2-1.fc26.x86_64.rp 1.5 MB/s |  89 kB     00:00    
+(50/120): python2-devel-2.7.13-12.fc26.x86_64.r 4.5 MB/s | 408 kB     00:00    
+(51/120): python2-2.7.13-12.fc26.x86_64.rpm     2.1 MB/s |  98 kB     00:00    
+(52/120): python-rpm-macros-3-20.fc26.noarch.rp 125 kB/s | 9.6 kB     00:00    
+(53/120): python2-rpm-macros-3-20.fc26.noarch.r 127 kB/s | 9.0 kB     00:00    
+(54/120): gcc-7.2.1-2.fc26.x86_64.rpm           2.3 MB/s |  21 MB     00:09    
+(55/120): python2-libs-2.7.13-12.fc26.x86_64.rp 6.0 MB/s | 6.3 MB     00:01    
+(56/120): python-srpm-macros-3-20.fc26.noarch.r 129 kB/s | 9.2 kB     00:00    
+(57/120): python3-devel-3.6.2-8.fc26.x86_64.rpm 2.1 MB/s | 861 kB     00:00    
+(58/120): python3-rpm-macros-3-20.fc26.noarch.r  89 kB/s | 9.0 kB     00:00    
+(59/120): redhat-rpm-config-63-1.fc26.noarch.rp 263 kB/s |  61 kB     00:00    
+(60/120): dwz-0.12-3.fc26.x86_64.rpm            358 kB/s | 105 kB     00:00    
+(61/120): fedora-rpm-macros-26-2.fc26.noarch.rp  79 kB/s | 6.5 kB     00:00    
+(62/120): fpc-srpm-macros-1.1-2.fc26.noarch.rpm  92 kB/s | 7.0 kB     00:00    
+(63/120): ghc-srpm-macros-1.4.2-5.fc26.noarch.r  89 kB/s | 7.7 kB     00:00    
+(64/120): gnat-srpm-macros-4-2.fc26.noarch.rpm   99 kB/s | 8.1 kB     00:00    
+(65/120): go-srpm-macros-2-8.fc26.noarch.rpm    117 kB/s | 7.7 kB     00:00    
+(66/120): ocaml-srpm-macros-4-2.fc26.noarch.rpm 120 kB/s | 7.5 kB     00:00    
+(67/120): perl-srpm-macros-1-21.fc26.noarch.rpm 121 kB/s | 9.0 kB     00:00    
+(68/120): qt5-srpm-macros-5.8.0-2.fc26.noarch.r 104 kB/s | 8.2 kB     00:00    
+(69/120): zip-3.0-18.fc26.x86_64.rpm            660 kB/s | 269 kB     00:00    
+(70/120): python2-pip-9.0.1-9.fc26.noarch.rpm   669 kB/s | 1.8 MB     00:02    
+(71/120): cyrus-sasl-devel-2.1.26-32.fc26.x86_6 934 kB/s | 314 kB     00:00    
+(72/120): cyrus-sasl-2.1.26-32.fc26.x86_64.rpm  595 kB/s |  90 kB     00:00    
+(73/120): libwebsockets-devel-2.2.1-1.fc26.x86_ 852 kB/s |  79 kB     00:00    
+(74/120): gcc-c++-7.2.1-2.fc26.x86_64.rpm       1.5 MB/s |  11 MB     00:07    
+(75/120): libwebsockets-2.2.1-1.fc26.x86_64.rpm 436 kB/s | 100 kB     00:00    
+(76/120): zlib-devel-1.2.11-2.fc26.x86_64.rpm   314 kB/s |  56 kB     00:00    
+(77/120): openssl-devel-1.1.0f-7.fc26.x86_64.rp 4.4 MB/s | 1.9 MB     00:00    
+(78/120): krb5-devel-1.15.1-28.fc26.x86_64.rpm  2.0 MB/s | 523 kB     00:00    
+(79/120): unzip-6.0-34.fc26.x86_64.rpm          2.9 MB/s | 186 kB     00:00    
+(80/120): libkadm5-1.15.1-28.fc26.x86_64.rpm    930 kB/s | 176 kB     00:00    
+(81/120): python2-setuptools-36.2.0-2.fc26.noar 6.8 MB/s | 597 kB     00:00    
+(82/120): perl-libs-5.24.3-395.fc26.x86_64.rpm  6.8 MB/s | 1.5 MB     00:00    
+(83/120): libstdc++-7.2.1-2.fc26.x86_64.rpm     1.3 MB/s | 462 kB     00:00    
+(84/120): perl-Unicode-Normalize-1.25-366.fc26. 454 kB/s |  79 kB     00:00    
+(85/120): perl-threads-2.16-1.fc26.x86_64.rpm   251 kB/s |  58 kB     00:00    
+(86/120): perl-threads-shared-1.57-1.fc26.x86_6 341 kB/s |  45 kB     00:00    
+(87/120): perl-Errno-1.25-395.fc26.x86_64.rpm   807 kB/s |  69 kB     00:00    
+(88/120): perl-IO-1.36-395.fc26.x86_64.rpm      1.0 MB/s | 134 kB     00:00    
+(89/120): perl-Scalar-List-Utils-1.48-1.fc26.x8 462 kB/s |  65 kB     00:00    
+(90/120): perl-5.24.3-395.fc26.x86_64.rpm       6.1 MB/s | 6.1 MB     00:00    
+(91/120): perl-macros-5.24.3-395.fc26.x86_64.rp 631 kB/s |  65 kB     00:00    
+(92/120): libsepol-devel-2.6-2.fc26.x86_64.rpm  750 kB/s |  80 kB     00:00    
+(93/120): libselinux-devel-2.6-7.fc26.x86_64.rp 1.7 MB/s | 197 kB     00:00    
+(94/120): libcom_err-devel-1.43.4-2.fc26.x86_64 189 kB/s |  35 kB     00:00    
+(95/120): keyutils-libs-devel-1.5.10-1.fc26.x86 199 kB/s |  46 kB     00:00    
+(96/120): libverto-devel-0.2.6-7.fc26.x86_64.rp 187 kB/s |  15 kB     00:00    
+(97/120): openssh-7.5p1-3.fc26.x86_64.rpm       3.6 MB/s | 468 kB     00:00    
+(98/120): fipscheck-lib-1.5.0-1.fc26.x86_64.rpm 109 kB/s |  13 kB     00:00    
+(99/120): libedit-3.1-17.20160618cvs.fc26.x86_6 292 kB/s |  96 kB     00:00    
+(100/120): fipscheck-1.5.0-1.fc26.x86_64.rpm    281 kB/s |  24 kB     00:00    
+(101/120): openssh-clients-7.5p1-3.fc26.x86_64. 817 kB/s | 652 kB     00:00    
+(102/120): libstdc++-devel-7.2.1-2.fc26.x86_64. 6.1 MB/s | 1.9 MB     00:00    
+(103/120): libgomp-7.2.1-2.fc26.x86_64.rpm      3.3 MB/s | 197 kB     00:00    
+(104/120): jsoncpp-1.8.1-3.fc26.x86_64.rpm      1.6 MB/s |  83 kB     00:00    
+(105/120): perl-Encode-2.88-6.fc26.x86_64.rpm   775 kB/s | 1.5 MB     00:01    
+(106/120): pcre-devel-8.41-1.fc26.x86_64.rpm    4.3 MB/s | 548 kB     00:00    
+(107/120): pcre-cpp-8.41-1.fc26.x86_64.rpm      514 kB/s |  40 kB     00:00    
+(108/120): pcre-utf16-8.41-1.fc26.x86_64.rpm    4.3 MB/s | 189 kB     00:00    
+(109/120): glibc-headers-2.25-10.fc26.x86_64.rp 6.2 MB/s | 515 kB     00:00    
+(110/120): pcre-utf32-8.41-1.fc26.x86_64.rpm    1.4 MB/s | 180 kB     00:00    
+(111/120): perl-Mozilla-CA-20160104-4.fc26.noar 195 kB/s |  13 kB     00:00    
+(112/120): kernel-headers-4.13.5-200.fc26.x86_6 6.8 MB/s | 1.1 MB     00:00    
+(113/120): perl-IO-Socket-IP-0.39-1.fc26.noarch 372 kB/s |  45 kB     00:00    
+(114/120): openssl-1.1.0f-7.fc26.x86_64.rpm     5.4 MB/s | 543 kB     00:00    
+(115/120): glibc-devel-2.25-10.fc26.x86_64.rpm  990 kB/s | 966 kB     00:00    
+(116/120): perl-IO-Socket-SSL-2.049-1.fc26.noar 437 kB/s | 270 kB     00:00    
+(117/120): perl-URI-1.71-6.fc26.noarch.rpm      258 kB/s | 115 kB     00:00    
+(118/120): perl-Net-SSLeay-1.81-1.fc26.x86_64.r 643 kB/s | 333 kB     00:00    
+(119/120): perl-Data-Dumper-2.161-2.fc26.x86_64 469 kB/s |  54 kB     00:00    
+(120/120): perl-libnet-3.10-3.fc26.noarch.rpm   677 kB/s | 119 kB     00:00    
 --------------------------------------------------------------------------------
-Total                                           3.1 MB/s | 105 MB     00:33     
+Total                                           4.9 MB/s | 105 MB     00:21     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -1400,7 +1400,7 @@ Complete!
 [91m+ git clone git://git.apache.org/qpid-proton.git
 [0m[91mCloning into 'qpid-proton'...
 [0m[91m+ cd qpid-proton
-+ '[' devel = latest ']'
+[0m[91m+ '[' devel = latest ']'
 [0m[91m+ cmake -DBUILD_CPP=OFF -DSYSINSTALL_BINDINGS=ON -DSYSINSTALL_PYTHON=ON -DCMAKE_INSTALL_PREFIX=/usr .
 [0m-- The C compiler identification is GNU 7.2.1
 -- Check for working C compiler: /usr/bin/cc
@@ -1409,6 +1409,8 @@ Complete!
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
+-- Looking for a CXX compiler
+-- Looking for a CXX compiler - /usr/bin/c++
 -- The CXX compiler identification is GNU 7.2.1
 -- Check for working CXX compiler: /usr/bin/c++
 -- Check for working CXX compiler: /usr/bin/c++ -- works
@@ -1417,7 +1419,7 @@ Complete!
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Build type is "RelWithDebInfo" (has debug symbols)
--- PN_VERSION: 0.18.0 (SNAPSHOT)
+-- PN_VERSION: 0.19.0 (SNAPSHOT)
 -- Can't locate the valgrind command; no run-time error detection
 -- Found OpenSSL: /usr/lib64/libcrypto.so (found version "1.1.0f") 
 -- Found PythonInterp: /usr/bin/python (found version "2.7.13") 
@@ -1458,43 +1460,43 @@ Complete!
 -- Build files have been written to: /qpid-proton
 [91m+ make
 [0mScanning dependencies of target generated_c_files
-[  1%] Generating src/protocol.h
-[  2%] Generating src/encodings.h
-[  2%] Built target generated_c_files
+[  0%] Generating src/protocol.h
+[  1%] Generating src/encodings.h
+[  1%] Built target generated_c_files
 Scanning dependencies of target qpid-proton-core
-[  3%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/object.c.o
-[  4%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/list.c.o
-[  5%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/map.c.o
-[  5%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/string.c.o
-[  6%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/iterator.c.o
-[  7%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/record.c.o
-[  8%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/log.c.o
-[  8%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/util.c.o
-[  9%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/error.c.o
-[ 10%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/buffer.c.o
-[ 11%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/types.c.o
-[ 12%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/framing.c.o
-[ 12%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/codec.c.o
-[ 13%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/decoder.c.o
-[ 14%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/encoder.c.o
-[ 15%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/dispatcher.c.o
-[ 16%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/connection_driver.c.o
-[ 16%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/engine.c.o
-[ 17%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/event.c.o
-[ 18%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/autodetect.c.o
-[ 19%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/transport.c.o
-[ 19%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/message.c.o
-[ 20%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/sasl/sasl.c.o
-[ 21%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/sasl/default_sasl.c.o
-[ 22%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/sasl/cyrus_sasl.c.o
-[ 23%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/ssl/openssl.c.o
-[ 23%] Linking C shared library libqpid-proton-core.so
+[  1%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/object.c.o
+[  2%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/list.c.o
+[  3%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/map.c.o
+[  4%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/string.c.o
+[  4%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/iterator.c.o
+[  5%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/object/record.c.o
+[  6%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/log.c.o
+[  7%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/util.c.o
+[  8%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/error.c.o
+[  8%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/buffer.c.o
+[  9%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/types.c.o
+[ 10%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/framing.c.o
+[ 11%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/codec.c.o
+[ 11%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/decoder.c.o
+[ 12%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/encoder.c.o
+[ 13%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/dispatcher.c.o
+[ 14%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/connection_driver.c.o
+[ 15%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/engine.c.o
+[ 15%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/event.c.o
+[ 16%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/autodetect.c.o
+[ 17%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/transport.c.o
+[ 18%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/core/message.c.o
+[ 18%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/sasl/sasl.c.o
+[ 19%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/sasl/default_sasl.c.o
+[ 20%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/sasl/cyrus_sasl.c.o
+[ 21%] Building C object proton-c/CMakeFiles/qpid-proton-core.dir/src/ssl/openssl.c.o
+[ 22%] Linking C shared library libqpid-proton-core.so
 [ 24%] Built target qpid-proton-core
 Scanning dependencies of target qpid-proton
 [ 25%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/object.c.o
 [ 26%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/list.c.o
 [ 27%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/map.c.o
-[ 28%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/string.c.o
+[ 27%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/string.c.o
 [ 28%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/iterator.c.o
 [ 29%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/object/record.c.o
 [ 30%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/log.c.o
@@ -1503,93 +1505,93 @@ Scanning dependencies of target qpid-proton
 [ 32%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/buffer.c.o
 [ 33%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/types.c.o
 [ 34%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/framing.c.o
-[ 35%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/codec.c.o
+[ 34%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/codec.c.o
 [ 35%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/decoder.c.o
 [ 36%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/encoder.c.o
 [ 37%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/dispatcher.c.o
 [ 38%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/connection_driver.c.o
-[ 39%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/engine.c.o
+[ 38%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/engine.c.o
 [ 39%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/event.c.o
 [ 40%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/autodetect.c.o
 [ 41%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/transport.c.o
-[ 42%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/message.c.o
+[ 41%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/core/message.c.o
 [ 42%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/sasl/sasl.c.o
 [ 43%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/sasl/default_sasl.c.o
 [ 44%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/sasl/cyrus_sasl.c.o
 [ 45%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/ssl/openssl.c.o
-[ 46%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/proactor/epoll.c.o
+[ 45%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/proactor/epoll.c.o
 [ 46%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/proactor/proactor-internal.c.o
 [ 47%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/extra/url.c.o
 [ 48%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/reactor.c.o
-[ 49%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/handler.c.o
-[ 50%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/connection.c.o
+[ 48%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/handler.c.o
+[ 49%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/connection.c.o
 [ 50%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/acceptor.c.o
 [ 51%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/selectable.c.o
 [ 52%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/timer.c.o
-[ 53%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/handlers/handshaker.c.o
+[ 52%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/handlers/handshaker.c.o
 [ 53%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/handlers/iohandler.c.o
 [ 54%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/handlers/flowcontroller.c.o
 [ 55%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/messenger/messenger.c.o
-[ 56%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/messenger/subscription.c.o
-[ 57%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/messenger/store.c.o
+[ 55%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/messenger/subscription.c.o
+[ 56%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/messenger/store.c.o
 [ 57%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/messenger/transform.c.o
 [ 58%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/platform/platform.c.o
-[ 59%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/io/posix/io.c.o
-[ 60%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/io/posix/selector.c.o
-[ 61%] Linking C shared library libqpid-proton.so
-[ 62%] Built target qpid-proton
+[ 58%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/io/posix/io.c.o
+[ 59%] Building C object proton-c/CMakeFiles/qpid-proton.dir/src/reactor/io/posix/selector.c.o
+[ 60%] Linking C shared library libqpid-proton.so
+[ 61%] Built target qpid-proton
 Scanning dependencies of target qpid-proton-proactor
-[ 63%] Building C object proton-c/CMakeFiles/qpid-proton-proactor.dir/src/proactor/epoll.c.o
-[ 64%] Building C object proton-c/CMakeFiles/qpid-proton-proactor.dir/src/proactor/proactor-internal.c.o
-[ 65%] Linking C shared library libqpid-proton-proactor.so
-[ 65%] Built target qpid-proton-proactor
+[ 61%] Building C object proton-c/CMakeFiles/qpid-proton-proactor.dir/src/proactor/epoll.c.o
+[ 62%] Building C object proton-c/CMakeFiles/qpid-proton-proactor.dir/src/proactor/proactor-internal.c.o
+[ 63%] Linking C shared library libqpid-proton-proactor.so
+[ 63%] Built target qpid-proton-proactor
 Scanning dependencies of target msgr-send
-[ 66%] Building C object tests/tools/apps/c/CMakeFiles/msgr-send.dir/msgr-send.c.o
-[ 67%] Building C object tests/tools/apps/c/CMakeFiles/msgr-send.dir/msgr-common.c.o
-[ 68%] Linking C executable msgr-send
-[ 68%] Built target msgr-send
+[ 63%] Building C object tests/tools/apps/c/CMakeFiles/msgr-send.dir/msgr-send.c.o
+[ 64%] Building C object tests/tools/apps/c/CMakeFiles/msgr-send.dir/msgr-common.c.o
+[ 65%] Linking C executable msgr-send
+[ 65%] Built target msgr-send
 Scanning dependencies of target msgr-recv
-[ 69%] Building C object tests/tools/apps/c/CMakeFiles/msgr-recv.dir/msgr-recv.c.o
-[ 70%] Building C object tests/tools/apps/c/CMakeFiles/msgr-recv.dir/msgr-common.c.o
-[ 70%] Linking C executable msgr-recv
-[ 70%] Built target msgr-recv
+[ 66%] Building C object tests/tools/apps/c/CMakeFiles/msgr-recv.dir/msgr-recv.c.o
+[ 67%] Building C object tests/tools/apps/c/CMakeFiles/msgr-recv.dir/msgr-common.c.o
+[ 68%] Linking C executable msgr-recv
+[ 68%] Built target msgr-recv
 Scanning dependencies of target reactor-recv
-[ 71%] Building C object tests/tools/apps/c/CMakeFiles/reactor-recv.dir/reactor-recv.c.o
-[ 71%] Building C object tests/tools/apps/c/CMakeFiles/reactor-recv.dir/msgr-common.c.o
-[ 72%] Linking C executable reactor-recv
-[ 72%] Built target reactor-recv
+[ 69%] Building C object tests/tools/apps/c/CMakeFiles/reactor-recv.dir/reactor-recv.c.o
+[ 69%] Building C object tests/tools/apps/c/CMakeFiles/reactor-recv.dir/msgr-common.c.o
+[ 70%] Linking C executable reactor-recv
+[ 70%] Built target reactor-recv
 Scanning dependencies of target reactor-send
-[ 73%] Building C object tests/tools/apps/c/CMakeFiles/reactor-send.dir/reactor-send.c.o
-[ 74%] Building C object tests/tools/apps/c/CMakeFiles/reactor-send.dir/msgr-common.c.o
-[ 75%] Linking C executable reactor-send
-[ 75%] Built target reactor-send
-[ 75%] Swig source
+[ 71%] Building C object tests/tools/apps/c/CMakeFiles/reactor-send.dir/reactor-send.c.o
+[ 72%] Building C object tests/tools/apps/c/CMakeFiles/reactor-send.dir/msgr-common.c.o
+[ 73%] Linking C executable reactor-send
+[ 73%] Built target reactor-send
+[ 73%] Swig source
 Scanning dependencies of target _cproton
-[ 76%] Building C object proton-c/bindings/python/CMakeFiles/_cproton.dir/cprotonPYTHON_wrap.c.o
-[ 77%] Linking C shared module _cproton.so
-[ 77%] Built target _cproton
+[ 74%] Building C object proton-c/bindings/python/CMakeFiles/_cproton.dir/cprotonPYTHON_wrap.c.o
+[ 75%] Linking C shared module _cproton.so
+[ 75%] Built target _cproton
 Scanning dependencies of target py_src_dist
-[ 77%] Built target py_src_dist
+[ 75%] Built target py_src_dist
 Scanning dependencies of target c-event-tests
-[ 78%] Building C object proton-c/src/tests/CMakeFiles/c-event-tests.dir/event.c.o
-[ 79%] Linking C executable c-event-tests
-[ 79%] Built target c-event-tests
+[ 76%] Building C object proton-c/src/tests/CMakeFiles/c-event-tests.dir/event.c.o
+[ 77%] Linking C executable c-event-tests
+[ 77%] Built target c-event-tests
 Scanning dependencies of target c-parse-url-tests
-[ 80%] Building C object proton-c/src/tests/CMakeFiles/c-parse-url-tests.dir/parse-url.c.o
-[ 81%] Linking C executable c-parse-url-tests
-[ 81%] Built target c-parse-url-tests
+[ 78%] Building C object proton-c/src/tests/CMakeFiles/c-parse-url-tests.dir/parse-url.c.o
+[ 78%] Linking C executable c-parse-url-tests
+[ 78%] Built target c-parse-url-tests
 Scanning dependencies of target c-refcount-tests
-[ 82%] Building C object proton-c/src/tests/CMakeFiles/c-refcount-tests.dir/refcount.c.o
-[ 82%] Linking C executable c-refcount-tests
-[ 82%] Built target c-refcount-tests
+[ 79%] Building C object proton-c/src/tests/CMakeFiles/c-refcount-tests.dir/refcount.c.o
+[ 80%] Linking C executable c-refcount-tests
+[ 80%] Built target c-refcount-tests
 Scanning dependencies of target c-proactor-tests
-[ 82%] Building C object proton-c/src/tests/CMakeFiles/c-proactor-tests.dir/proactor.c.o
-[ 83%] Linking C executable c-proactor-tests
-[ 83%] Built target c-proactor-tests
+[ 81%] Building C object proton-c/src/tests/CMakeFiles/c-proactor-tests.dir/proactor.c.o
+[ 82%] Linking C executable c-proactor-tests
+[ 82%] Built target c-proactor-tests
 Scanning dependencies of target c-message-tests
-[ 84%] Building C object proton-c/src/tests/CMakeFiles/c-message-tests.dir/message.c.o
-[ 84%] Linking C executable c-message-tests
-[ 84%] Built target c-message-tests
+[ 82%] Building C object proton-c/src/tests/CMakeFiles/c-message-tests.dir/message.c.o
+[ 83%] Linking C executable c-message-tests
+[ 83%] Built target c-message-tests
 Scanning dependencies of target c-data-tests
 [ 84%] Building C object proton-c/src/tests/CMakeFiles/c-data-tests.dir/data.c.o
 [ 85%] Linking C executable c-data-tests
@@ -1600,76 +1602,81 @@ Scanning dependencies of target c-condition-tests
 [ 87%] Built target c-condition-tests
 Scanning dependencies of target c-connection-driver-tests
 [ 88%] Building C object proton-c/src/tests/CMakeFiles/c-connection-driver-tests.dir/connection_driver.c.o
-[ 89%] Linking C executable c-connection-driver-tests
-[ 89%] Built target c-connection-driver-tests
+[ 88%] Linking C executable c-connection-driver-tests
+[ 88%] Built target c-connection-driver-tests
 Scanning dependencies of target c-object-tests
-[ 90%] Building C object proton-c/src/tests/CMakeFiles/c-object-tests.dir/object.c.o
-[ 91%] Linking C executable c-object-tests
-[ 91%] Built target c-object-tests
+[ 89%] Building C object proton-c/src/tests/CMakeFiles/c-object-tests.dir/object.c.o
+[ 90%] Linking C executable c-object-tests
+[ 90%] Built target c-object-tests
 Scanning dependencies of target c-engine-tests
-[ 92%] Building C object proton-c/src/tests/CMakeFiles/c-engine-tests.dir/engine.c.o
-[ 92%] Linking C executable c-engine-tests
-[ 92%] Built target c-engine-tests
+[ 90%] Building C object proton-c/src/tests/CMakeFiles/c-engine-tests.dir/engine.c.o
+[ 91%] Linking C executable c-engine-tests
+[ 91%] Built target c-engine-tests
 Scanning dependencies of target c-send
-[ 93%] Building C object examples/c/CMakeFiles/c-send.dir/send.c.o
-[ 94%] Linking C executable send
-[ 94%] Built target c-send
+[ 92%] Building C object examples/c/CMakeFiles/c-send.dir/send.c.o
+[ 93%] Linking C executable send
+[ 93%] Built target c-send
 Scanning dependencies of target c-send-abort
-[ 95%] Building C object examples/c/CMakeFiles/c-send-abort.dir/send-abort.c.o
-[ 95%] Linking C executable send-abort
-[ 95%] Built target c-send-abort
+[ 93%] Building C object examples/c/CMakeFiles/c-send-abort.dir/send-abort.c.o
+[ 94%] Linking C executable send-abort
+[ 94%] Built target c-send-abort
 Scanning dependencies of target c-broker
-[ 96%] Building C object examples/c/CMakeFiles/c-broker.dir/broker.c.o
-[ 96%] Linking C executable broker
-[ 96%] Built target c-broker
+[ 95%] Building C object examples/c/CMakeFiles/c-broker.dir/broker.c.o
+[ 95%] Linking C executable broker
+[ 95%] Built target c-broker
 Scanning dependencies of target c-direct
-[ 97%] Building C object examples/c/CMakeFiles/c-direct.dir/direct.c.o
-[ 98%] Linking C executable direct
-[ 98%] Built target c-direct
+[ 96%] Building C object examples/c/CMakeFiles/c-direct.dir/direct.c.o
+[ 97%] Linking C executable direct
+[ 97%] Built target c-direct
 Scanning dependencies of target c-receive
-[ 99%] Building C object examples/c/CMakeFiles/c-receive.dir/receive.c.o
-[100%] Linking C executable receive
-[100%] Built target c-receive
+[ 98%] Building C object examples/c/CMakeFiles/c-receive.dir/receive.c.o
+[ 98%] Linking C executable receive
+[ 98%] Built target c-receive
+Scanning dependencies of target c-send-ssl
+[ 99%] Building C object examples/c/CMakeFiles/c-send-ssl.dir/send-ssl.c.o
+[100%] Linking C executable send-ssl
+[100%] Built target c-send-ssl
 [91m+ make install
-[0m[  2%] Built target generated_c_files
+[0m[  1%] Built target generated_c_files
 [ 24%] Built target qpid-proton-core
-[ 62%] Built target qpid-proton
-[ 65%] Built target qpid-proton-proactor
-[ 68%] Built target msgr-send
-[ 70%] Built target msgr-recv
-[ 72%] Built target reactor-recv
-[ 75%] Built target reactor-send
-[ 77%] Built target _cproton
-[ 77%] Built target py_src_dist
-[ 79%] Built target c-event-tests
-[ 81%] Built target c-parse-url-tests
-[ 82%] Built target c-refcount-tests
-[ 83%] Built target c-proactor-tests
-[ 84%] Built target c-message-tests
+[ 61%] Built target qpid-proton
+[ 63%] Built target qpid-proton-proactor
+[ 65%] Built target msgr-send
+[ 68%] Built target msgr-recv
+[ 70%] Built target reactor-recv
+[ 73%] Built target reactor-send
+[ 75%] Built target _cproton
+[ 75%] Built target py_src_dist
+[ 77%] Built target c-event-tests
+[ 78%] Built target c-parse-url-tests
+[ 80%] Built target c-refcount-tests
+[ 82%] Built target c-proactor-tests
+[ 83%] Built target c-message-tests
 [ 85%] Built target c-data-tests
 [ 87%] Built target c-condition-tests
-[ 89%] Built target c-connection-driver-tests
-[ 91%] Built target c-object-tests
-[ 92%] Built target c-engine-tests
-[ 94%] Built target c-send
-[ 95%] Built target c-send-abort
-[ 96%] Built target c-broker
-[ 98%] Built target c-direct
-[100%] Built target c-receive
+[ 88%] Built target c-connection-driver-tests
+[ 90%] Built target c-object-tests
+[ 91%] Built target c-engine-tests
+[ 93%] Built target c-send
+[ 94%] Built target c-send-abort
+[ 95%] Built target c-broker
+[ 97%] Built target c-direct
+[ 98%] Built target c-receive
+[100%] Built target c-send-ssl
 Install the project...
 -- Install configuration: "RelWithDebInfo"
--- Installing: /usr/share/proton-0.18.0/LICENSE
--- Installing: /usr/share/proton-0.18.0/README.md
+-- Installing: /usr/share/proton-0.19.0/LICENSE
+-- Installing: /usr/share/proton-0.19.0/README.md
 -- Installing: /usr/lib64/libqpid-proton.so.11.0.0
 -- Installing: /usr/lib64/libqpid-proton.so.11
 -- Installing: /usr/lib64/libqpid-proton.so
--- Installing: /usr/lib64/libqpid-proton-core.so.11.0.0
--- Installing: /usr/lib64/libqpid-proton-core.so.11
+-- Installing: /usr/lib64/libqpid-proton-core.so.10.1.0
+-- Installing: /usr/lib64/libqpid-proton-core.so.10
 -- Installing: /usr/lib64/libqpid-proton-core.so
--- Installing: /usr/lib64/libqpid-proton-proactor.so.11.0.0
--- Installing: /usr/lib64/libqpid-proton-proactor.so.11
+-- Installing: /usr/lib64/libqpid-proton-proactor.so.1.0.0
+-- Installing: /usr/lib64/libqpid-proton-proactor.so.1
 -- Installing: /usr/lib64/libqpid-proton-proactor.so
--- Set runtime path of "/usr/lib64/libqpid-proton-proactor.so.11.0.0" to ""
+-- Set runtime path of "/usr/lib64/libqpid-proton-proactor.so.1.0.0" to ""
 -- Installing: /usr/include/proton/cid.h
 -- Installing: /usr/include/proton/codec.h
 -- Installing: /usr/include/proton/condition.h
@@ -1732,202 +1739,225 @@ Install the project...
 -- Installing: /usr/lib64/python2.7/site-packages/proton/_compat.pyo
 -- Installing: /usr/lib64/python2.7/site-packages/_cproton.so
 -- Set runtime path of "/usr/lib64/python2.7/site-packages/_cproton.so" to ""
--- Installing: /usr/share/proton-0.18.0/examples/c
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeLists.txt
--- Installing: /usr/share/proton-0.18.0/examples/c/README.dox
--- Installing: /usr/share/proton-0.18.0/examples/c/broker.c
--- Installing: /usr/share/proton-0.18.0/examples/c/direct.c
--- Installing: /usr/share/proton-0.18.0/examples/c/example_test.py
--- Installing: /usr/share/proton-0.18.0/examples/c/receive.c
--- Installing: /usr/share/proton-0.18.0/examples/c/send-abort.c
--- Installing: /usr/share/proton-0.18.0/examples/c/send.c
--- Installing: /usr/share/proton-0.18.0/examples/c/thread.h
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/depend.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/link.txt
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/cmake_clean.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/build.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/DependInfo.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/flags.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/progress.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/C.includecache
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/depend.internal
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send.dir/send.c.o
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/depend.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/link.txt
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/cmake_clean.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/build.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/DependInfo.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/flags.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/progress.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/C.includecache
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/depend.internal
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-send-abort.dir/send-abort.c.o
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/depend.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/link.txt
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/cmake_clean.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/build.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/DependInfo.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/flags.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/progress.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/C.includecache
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/depend.internal
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-broker.dir/broker.c.o
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/depend.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/link.txt
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/cmake_clean.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/build.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/DependInfo.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/flags.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/progress.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/C.includecache
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/depend.internal
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-direct.dir/direct.c.o
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/depend.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/link.txt
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/cmake_clean.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/build.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/DependInfo.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/flags.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/progress.make
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/C.includecache
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/depend.internal
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/c-receive.dir/receive.c.o
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/CMakeDirectoryInformation.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CMakeFiles/progress.marks
--- Installing: /usr/share/proton-0.18.0/examples/c/Makefile
--- Installing: /usr/share/proton-0.18.0/examples/c/cmake_install.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/CTestTestfile.cmake
--- Installing: /usr/share/proton-0.18.0/examples/c/send
--- Installing: /usr/share/proton-0.18.0/examples/c/send-abort
--- Installing: /usr/share/proton-0.18.0/examples/c/broker
--- Installing: /usr/share/proton-0.18.0/examples/c/direct
--- Installing: /usr/share/proton-0.18.0/examples/c/receive
--- Installing: /usr/share/proton-0.18.0/examples/cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/CMakeLists.txt
--- Installing: /usr/share/proton-0.18.0/examples/cpp/README.dox
--- Installing: /usr/share/proton-0.18.0/examples/cpp/broker.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/client.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/connection_options.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/direct_recv.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/direct_send.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/encode_decode.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/example_test.py
--- Installing: /usr/share/proton-0.18.0/examples/cpp/fake_cpp11.hpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/flow_control.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/helloworld.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/helloworld_direct.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/message_properties.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/multithreaded_client.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/multithreaded_client_flow_control.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/options.hpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/queue_browser.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/reconnect_client.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/scheduled_send.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/scheduled_send_03.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/selected_recv.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/server.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/server_direct.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/service_bus.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/simple_recv.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/simple_send.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/README.txt
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tclient-certificate.p12
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tclient-certificate.pem
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tclient-full.p12
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tclient-private-key.pem
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tserver-certificate.p12
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tserver-certificate.pem
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tserver-full.p12
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_certs/tserver-private-key.pem
--- Installing: /usr/share/proton-0.18.0/examples/cpp/ssl_client_cert.cpp
--- Installing: /usr/share/proton-0.18.0/examples/cpp/tutorial.dox
--- Installing: /usr/share/proton-0.18.0/examples/go
--- Installing: /usr/share/proton-0.18.0/examples/go/CMakeLists.txt
--- Installing: /usr/share/proton-0.18.0/examples/go/README.md
--- Installing: /usr/share/proton-0.18.0/examples/go/electron
--- Installing: /usr/share/proton-0.18.0/examples/go/electron/broker.go
--- Installing: /usr/share/proton-0.18.0/examples/go/electron/receive.go
--- Installing: /usr/share/proton-0.18.0/examples/go/electron/send.go
--- Installing: /usr/share/proton-0.18.0/examples/go/example_test.go
--- Installing: /usr/share/proton-0.18.0/examples/go/proton
--- Installing: /usr/share/proton-0.18.0/examples/go/proton/broker.go
--- Installing: /usr/share/proton-0.18.0/examples/go/CMakeFiles
--- Installing: /usr/share/proton-0.18.0/examples/go/CMakeFiles/CMakeDirectoryInformation.cmake
--- Installing: /usr/share/proton-0.18.0/examples/go/CMakeFiles/progress.marks
--- Installing: /usr/share/proton-0.18.0/examples/go/Makefile
--- Installing: /usr/share/proton-0.18.0/examples/go/cmake_install.cmake
--- Installing: /usr/share/proton-0.18.0/examples/go/CTestTestfile.cmake
--- Installing: /usr/share/proton-0.18.0/examples/python
--- Installing: /usr/share/proton-0.18.0/examples/python/README
--- Installing: /usr/share/proton-0.18.0/examples/python/abstract_server.py
--- Installing: /usr/share/proton-0.18.0/examples/python/broker.py
--- Installing: /usr/share/proton-0.18.0/examples/python/client.py
--- Installing: /usr/share/proton-0.18.0/examples/python/client_http.py
--- Installing: /usr/share/proton-0.18.0/examples/python/db_common.py
--- Installing: /usr/share/proton-0.18.0/examples/python/db_ctrl.py
--- Installing: /usr/share/proton-0.18.0/examples/python/db_recv.py
--- Installing: /usr/share/proton-0.18.0/examples/python/db_send.py
--- Installing: /usr/share/proton-0.18.0/examples/python/direct_recv.py
--- Installing: /usr/share/proton-0.18.0/examples/python/direct_send.py
--- Installing: /usr/share/proton-0.18.0/examples/python/helloworld.py
--- Installing: /usr/share/proton-0.18.0/examples/python/helloworld_blocking.py
--- Installing: /usr/share/proton-0.18.0/examples/python/helloworld_direct.py
--- Installing: /usr/share/proton-0.18.0/examples/python/helloworld_direct_tornado.py
--- Installing: /usr/share/proton-0.18.0/examples/python/helloworld_tornado.py
--- Installing: /usr/share/proton-0.18.0/examples/python/proton-server.conf
--- Installing: /usr/share/proton-0.18.0/examples/python/proton_server.py
--- Installing: /usr/share/proton-0.18.0/examples/python/proton_tornado.py
--- Installing: /usr/share/proton-0.18.0/examples/python/queue_browser.py
--- Installing: /usr/share/proton-0.18.0/examples/python/recurring_timer.py
--- Installing: /usr/share/proton-0.18.0/examples/python/recurring_timer_tornado.py
--- Installing: /usr/share/proton-0.18.0/examples/python/selected_recv.py
--- Installing: /usr/share/proton-0.18.0/examples/python/server.py
--- Installing: /usr/share/proton-0.18.0/examples/python/server_direct.py
--- Installing: /usr/share/proton-0.18.0/examples/python/server_tx.py
--- Installing: /usr/share/proton-0.18.0/examples/python/simple_recv.py
--- Installing: /usr/share/proton-0.18.0/examples/python/simple_send.py
--- Installing: /usr/share/proton-0.18.0/examples/python/sync_client.py
--- Installing: /usr/share/proton-0.18.0/examples/python/test_examples.py
--- Installing: /usr/share/proton-0.18.0/examples/python/tx_recv.py
--- Installing: /usr/share/proton-0.18.0/examples/python/tx_recv_interactive.py
--- Installing: /usr/share/proton-0.18.0/examples/python/tx_send.py
--- Installing: /usr/share/proton-0.18.0/examples/ruby
--- Installing: /usr/share/proton-0.18.0/examples/ruby/engine_recv.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/engine_send.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/example_test.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/lib
--- Installing: /usr/share/proton-0.18.0/examples/ruby/lib/debugging.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/lib/driver.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/lib/qpid_examples.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/lib/selectable.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/lib/send_and_receive.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/README.md
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/broker.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/client.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/direct_recv.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/direct_send.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/helloworld.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/helloworld_direct.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/server.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/simple_recv.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/reactor/simple_send.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/registry_test.rb
--- Installing: /usr/share/proton-0.18.0/examples/ruby/wrapper_test.rb
+-- Installing: /usr/share/proton-0.19.0/examples/c
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeLists.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/README.dox
+-- Installing: /usr/share/proton-0.19.0/examples/c/broker.c
+-- Installing: /usr/share/proton-0.19.0/examples/c/direct.c
+-- Installing: /usr/share/proton-0.19.0/examples/c/example_test.py
+-- Installing: /usr/share/proton-0.19.0/examples/c/receive.c
+-- Installing: /usr/share/proton-0.19.0/examples/c/send-abort.c
+-- Installing: /usr/share/proton-0.19.0/examples/c/send-ssl.c
+-- Installing: /usr/share/proton-0.19.0/examples/c/send.c
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/README.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tclient-certificate.p12
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tclient-certificate.pem
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tclient-full.p12
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tclient-private-key.pem
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tserver-certificate.p12
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tserver-certificate.pem
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tserver-full.p12
+-- Installing: /usr/share/proton-0.19.0/examples/c/ssl_certs/tserver-private-key.pem
+-- Installing: /usr/share/proton-0.19.0/examples/c/thread.h
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/depend.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/link.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/cmake_clean.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/build.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/DependInfo.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/flags.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/progress.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/C.includecache
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/depend.internal
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send.dir/send.c.o
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/depend.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/link.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/cmake_clean.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/build.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/DependInfo.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/flags.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/progress.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/C.includecache
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/depend.internal
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-abort.dir/send-abort.c.o
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/depend.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/link.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/cmake_clean.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/build.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/DependInfo.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/flags.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/progress.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/C.includecache
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/depend.internal
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-broker.dir/broker.c.o
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/depend.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/link.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/cmake_clean.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/build.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/DependInfo.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/flags.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/progress.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/C.includecache
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/depend.internal
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-direct.dir/direct.c.o
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/depend.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/link.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/cmake_clean.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/build.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/DependInfo.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/flags.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/progress.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/C.includecache
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/depend.internal
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-receive.dir/receive.c.o
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/depend.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/link.txt
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/cmake_clean.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/build.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/DependInfo.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/flags.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/progress.make
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/C.includecache
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/depend.internal
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/c-send-ssl.dir/send-ssl.c.o
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/CMakeDirectoryInformation.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CMakeFiles/progress.marks
+-- Installing: /usr/share/proton-0.19.0/examples/c/Makefile
+-- Installing: /usr/share/proton-0.19.0/examples/c/cmake_install.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/CTestTestfile.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/c/send
+-- Installing: /usr/share/proton-0.19.0/examples/c/send-abort
+-- Installing: /usr/share/proton-0.19.0/examples/c/broker
+-- Installing: /usr/share/proton-0.19.0/examples/c/direct
+-- Installing: /usr/share/proton-0.19.0/examples/c/receive
+-- Installing: /usr/share/proton-0.19.0/examples/c/send-ssl
+-- Installing: /usr/share/proton-0.19.0/examples/cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/CMakeLists.txt
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/README.dox
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/broker.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/client.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/connection_options.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/direct_recv.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/direct_send.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/encode_decode.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/example_test.py
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/fake_cpp11.hpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/flow_control.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/helloworld.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/helloworld_direct.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/message_properties.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/multithreaded_client.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/multithreaded_client_flow_control.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/options.hpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/queue_browser.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/reconnect_client.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/scheduled_send.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/scheduled_send_03.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/selected_recv.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/server.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/server_direct.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/service_bus.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/simple_recv.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/simple_send.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/README.txt
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tclient-certificate.p12
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tclient-certificate.pem
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tclient-full.p12
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tclient-private-key.pem
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tserver-certificate.p12
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tserver-certificate.pem
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tserver-full.p12
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_certs/tserver-private-key.pem
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/ssl_client_cert.cpp
+-- Installing: /usr/share/proton-0.19.0/examples/cpp/tutorial.dox
+-- Installing: /usr/share/proton-0.19.0/examples/go
+-- Installing: /usr/share/proton-0.19.0/examples/go/CMakeLists.txt
+-- Installing: /usr/share/proton-0.19.0/examples/go/README.md
+-- Installing: /usr/share/proton-0.19.0/examples/go/electron
+-- Installing: /usr/share/proton-0.19.0/examples/go/electron/broker.go
+-- Installing: /usr/share/proton-0.19.0/examples/go/electron/receive.go
+-- Installing: /usr/share/proton-0.19.0/examples/go/electron/send.go
+-- Installing: /usr/share/proton-0.19.0/examples/go/example_test.go
+-- Installing: /usr/share/proton-0.19.0/examples/go/proton
+-- Installing: /usr/share/proton-0.19.0/examples/go/proton/broker.go
+-- Installing: /usr/share/proton-0.19.0/examples/go/CMakeFiles
+-- Installing: /usr/share/proton-0.19.0/examples/go/CMakeFiles/CMakeDirectoryInformation.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/go/CMakeFiles/progress.marks
+-- Installing: /usr/share/proton-0.19.0/examples/go/Makefile
+-- Installing: /usr/share/proton-0.19.0/examples/go/cmake_install.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/go/CTestTestfile.cmake
+-- Installing: /usr/share/proton-0.19.0/examples/python
+-- Installing: /usr/share/proton-0.19.0/examples/python/README
+-- Installing: /usr/share/proton-0.19.0/examples/python/abstract_server.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/broker.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/client.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/client_http.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/db_common.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/db_ctrl.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/db_recv.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/db_send.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/direct_recv.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/direct_send.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/helloworld.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/helloworld_blocking.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/helloworld_direct.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/helloworld_direct_tornado.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/helloworld_tornado.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/proton-server.conf
+-- Installing: /usr/share/proton-0.19.0/examples/python/proton_server.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/proton_tornado.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/queue_browser.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/recurring_timer.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/recurring_timer_tornado.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/selected_recv.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/server.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/server_direct.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/server_tx.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/simple_recv.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/simple_send.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/sync_client.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/test_examples.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/tx_recv.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/tx_recv_interactive.py
+-- Installing: /usr/share/proton-0.19.0/examples/python/tx_send.py
+-- Installing: /usr/share/proton-0.19.0/examples/ruby
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/engine_recv.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/engine_send.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/example_test.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/lib
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/lib/debugging.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/lib/driver.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/lib/qpid_examples.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/lib/selectable.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/lib/send_and_receive.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/README.md
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/broker.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/client.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/direct_recv.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/direct_send.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/helloworld.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/helloworld_direct.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/server.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/simple_recv.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/reactor/simple_send.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/registry_test.rb
+-- Installing: /usr/share/proton-0.19.0/examples/ruby/wrapper_test.rb
 [91m+ cd /
 + git clone git://git.apache.org/qpid-dispatch.git
 [0m[91mCloning into 'qpid-dispatch'...
 [0m[91m+ cd qpid-dispatch
-[0m[91m+ '[' devel = latest ']'
-+ cmake -DUSE_LIBWEBSOCKETS=ON '-DCMAKE_C_FLAGS= -Wno-error=implicit-function-declaration' -DCMAKE_INSTALL_PREFIX=/usr .
++ '[' devel = latest ']'
+[0m[91m+ cmake -DUSE_LIBWEBSOCKETS=ON '-DCMAKE_C_FLAGS= -Wno-error=implicit-function-declaration' -DCMAKE_INSTALL_PREFIX=/usr .
 [0m-- The C compiler identification is GNU 7.2.1
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
@@ -2038,6 +2068,9 @@ Scanning dependencies of target doc_gen
 [100%] Built target doc_gen
 Install the project...
 -- Install configuration: "RelWithDebInfo"
+-- Installing: /usr/include/qpid/dispatch/alloc.h
+-- Installing: /usr/include/qpid/dispatch/alloc_malloc.h
+-- Installing: /usr/include/qpid/dispatch/alloc_pool.h
 -- Installing: /usr/include/qpid/dispatch/amqp.h
 -- Installing: /usr/include/qpid/dispatch/atomic.h
 -- Installing: /usr/include/qpid/dispatch/bitmask.h
@@ -2095,6 +2128,7 @@ Install the project...
 -- Installing: /usr/lib/qpid-dispatch/tests/system_tests_failover_list.py
 -- Installing: /usr/lib/qpid-dispatch/tests/system_tests_denied_unsettled_multicast.py
 -- Installing: /usr/lib/qpid-dispatch/tests/system_tests_auth_service_plugin.py
+-- Installing: /usr/lib/qpid-dispatch/tests/system_tests_delivery_abort.py
 -- Installing: /usr/lib/qpid-dispatch/tests/system_tests_http.py
 -- Installing: /usr/lib/qpid-dispatch/tests/run_system_tests.py
 -- Installing: /usr/lib/qpid-dispatch/tests/system_test.py
@@ -2827,7 +2861,7 @@ Removed:
 
 Complete!
 [91m+ dnf install -y python libwebsockets cyrus-sasl-plain cyrus-sasl-gssapi cyrus-sasl-md5 cyrus-sasl-lib openssl
-[0mLast metadata expiration check: 0:05:45 ago on Fri Oct 13 14:13:04 2017.
+[0mLast metadata expiration check: 0:06:11 ago on Wed Oct 25 14:25:14 2017.
 [91mPackage cyrus-sasl-lib-2.1.26-32.fc26.x86_64 is already installed, skipping.
 [0mDependencies resolved.
 ================================================================================
@@ -2858,25 +2892,23 @@ Install  15 Packages
 Total download size: 14 M
 Installed size: 51 M
 Downloading Packages:
-(1/15): python2-2.7.13-12.fc26.x86_64.rpm       293 kB/s |  98 kB     00:00    
-(2/15): python2-libs-2.7.13-12.fc26.x86_64.rpm  845 kB/s | 6.3 MB     00:07    
-(3/15): python2-pip-9.0.1-9.fc26.noarch.rpm      82 kB/s | 1.8 MB     00:22    
-(4/15): cyrus-sasl-gssapi-2.1.26-32.fc26.x86_64 7.5 kB/s |  46 kB     00:06    
-(5/15): cyrus-sasl-md5-2.1.26-32.fc26.x86_64.rp  30 kB/s |  62 kB     00:02    
-(6/15): openssl-1.1.0f-7.fc26.x86_64.rpm        353 kB/s | 543 kB     00:01    
-(7/15): make-4.2.1-2.fc26.x86_64.rpm            224 kB/s | 492 kB     00:02    
-(8/15): gc-7.6.0-2.fc26.x86_64.rpm               31 kB/s | 108 kB     00:03    
-[MIRROR] libwebsockets-2.2.1-1.fc26.x86_64.rpm: Curl error (28): Timeout was reached for http://mirror.seas.harvard.edu/fedora/linux/releases/26/Everything/x86_64/os/Packages/l/libwebsockets-2.2.1-1.fc26.x86_64.rpm [Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds]
-[MIRROR] cyrus-sasl-plain-2.1.26-32.fc26.x86_64.rpm: Curl error (28): Timeout was reached for http://mirror.seas.harvard.edu/fedora/linux/releases/26/Everything/x86_64/os/Packages/c/cyrus-sasl-plain-2.1.26-32.fc26.x86_64.rpm [Connection timed out after 30003 milliseconds]
-(9/15): cyrus-sasl-plain-2.1.26-32.fc26.x86_64. 1.4 kB/s |  43 kB     00:30    
-(10/15): libwebsockets-2.2.1-1.fc26.x86_64.rpm  2.6 kB/s | 100 kB     00:38    
-(11/15): libatomic_ops-7.4.4-2.fc26.x86_64.rpm  219 kB/s |  31 kB     00:00    
-(12/15): libtool-ltdl-2.4.6-17.fc26.x86_64.rpm  359 kB/s |  55 kB     00:00    
-(13/15): python2-setuptools-36.2.0-2.fc26.noarc 1.0 MB/s | 597 kB     00:00    
-(14/15): libstdc++-7.2.1-2.fc26.x86_64.rpm      506 kB/s | 462 kB     00:00    
-(15/15): guile-2.0.14-1.fc26.x86_64.rpm         825 kB/s | 3.5 MB     00:04    
+(1/15): python2-2.7.13-12.fc26.x86_64.rpm       197 kB/s |  98 kB     00:00    
+(2/15): python2-pip-9.0.1-9.fc26.noarch.rpm     2.3 MB/s | 1.8 MB     00:00    
+(3/15): cyrus-sasl-plain-2.1.26-32.fc26.x86_64. 631 kB/s |  43 kB     00:00    
+(4/15): libwebsockets-2.2.1-1.fc26.x86_64.rpm   244 kB/s | 100 kB     00:00    
+(5/15): cyrus-sasl-gssapi-2.1.26-32.fc26.x86_64 670 kB/s |  46 kB     00:00    
+(6/15): cyrus-sasl-md5-2.1.26-32.fc26.x86_64.rp 456 kB/s |  62 kB     00:00    
+(7/15): make-4.2.1-2.fc26.x86_64.rpm            5.5 MB/s | 492 kB     00:00    
+(8/15): gc-7.6.0-2.fc26.x86_64.rpm              1.5 MB/s | 108 kB     00:00    
+(9/15): guile-2.0.14-1.fc26.x86_64.rpm           16 MB/s | 3.5 MB     00:00    
+(10/15): libatomic_ops-7.4.4-2.fc26.x86_64.rpm  458 kB/s |  31 kB     00:00    
+(11/15): libtool-ltdl-2.4.6-17.fc26.x86_64.rpm  786 kB/s |  55 kB     00:00    
+(12/15): openssl-1.1.0f-7.fc26.x86_64.rpm       729 kB/s | 543 kB     00:00    
+(13/15): python2-libs-2.7.13-12.fc26.x86_64.rpm 3.2 MB/s | 6.3 MB     00:01    
+(14/15): python2-setuptools-36.2.0-2.fc26.noarc 765 kB/s | 597 kB     00:00    
+(15/15): libstdc++-7.2.1-2.fc26.x86_64.rpm      628 kB/s | 462 kB     00:00    
 --------------------------------------------------------------------------------
-Total                                           335 kB/s |  14 MB     00:43     
+Total                                           4.3 MB/s |  14 MB     00:03     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -2935,22 +2967,22 @@ Installed:
 
 Complete!
 [91m+ cd /
-[0m[91m+ rm -fr qpid-proton qpid-dispatch
++ rm -fr qpid-proton qpid-dispatch
 [0m[91m+ dnf clean all
-[0m39 files removed
+[0m41 files removed
 [91m+ exit
-[0m ---> 1630caf467a1
-Removing intermediate container d674a3331c45
+[0m ---> 8673a7d3cae0
+Removing intermediate container 8779ca203ea2
 Step 9 : VOLUME /etc/qpid-dispatch
- ---> Running in 452ff25c8746
- ---> 01bd64d38546
-Removing intermediate container 452ff25c8746
+ ---> Running in 4dc0d54418cf
+ ---> 3faf7c047ca1
+Removing intermediate container 4dc0d54418cf
 Step 10 : EXPOSE 5671 5672
- ---> Running in 3ecf2d9b95d9
- ---> d8782aee0c44
-Removing intermediate container 3ecf2d9b95d9
+ ---> Running in 3d16a6422d61
+ ---> 065f47384302
+Removing intermediate container 3d16a6422d61
 Step 11 : ENTRYPOINT /usr/sbin/qdrouterd
- ---> Running in f94a9d4a897d
- ---> 436e82a8c963
-Removing intermediate container f94a9d4a897d
-Successfully built 436e82a8c963
+ ---> Running in ed9c6733adbb
+ ---> 3c0857368181
+Removing intermediate container ed9c6733adbb
+Successfully built 3c0857368181

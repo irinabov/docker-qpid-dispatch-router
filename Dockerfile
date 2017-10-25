@@ -4,7 +4,7 @@ ARG proton
 ARG dispatch
 ENV VERSION=${version:-latest} \
     NAME=docker-qpid-dispatch-router \
-    QPID_PROTON_VERSION=${proton:-0.17.0} \
+    QPID_PROTON_VERSION=${proton:-0.18.0} \
     QPID_DISPATCH_VERSION=${dispatch:-0.8.0}
 LABEL maintainer="Irina Boverman <irina.boverman@gmail.com>" \
       summary="Docker image for Qpid Dispatch router." \
@@ -15,7 +15,7 @@ LABEL maintainer="Irina Boverman <irina.boverman@gmail.com>" \
       usage2="docker run -p 5672:5672 irinabov/docker-qpid-dispatch-router --help" \
       usage3="Customize container execution using your own version of a config file"
 
-# Install all dependencies, build from source, install qpid-cpp components
+# Install all dependencies, build from source, install components
 COPY ./build.sh /
 RUN ./build.sh
 

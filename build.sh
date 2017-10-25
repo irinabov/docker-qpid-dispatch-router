@@ -8,12 +8,8 @@ fi
 #
 home=$PWD
 dnf update -y
-# for proton <= 0.17.0 (latest now is 0.17.0), use compat-openssl10, otherwise use openssl
-if [ "$VERSION" = "latest" ]; then
-  openssl=compat-openssl10
-else
-  openssl=openssl
-fi
+# for proton <= 0.17.0 (latest now is 0.18.0), use compat-openssl10, otherwise use openssl
+openssl=openssl
 #
 # Install builod dependencies
 #
